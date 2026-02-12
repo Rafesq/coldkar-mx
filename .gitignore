@@ -1,0 +1,30 @@
+# Dependencias (Nunca se suben, son muy pesadas)
+node_modules/
+jspm_packages/
+
+# Archivos de configuración personal / Secretos
+.env
+.env.local
+.env.*.local
+
+# Archivos del Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Carpetas de compilación (si usas frameworks como React, Vue o Next.js)
+dist/
+build/
+.next/
+out/
+
+# Logs y errores
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Archivos de editores de código
+.vscode/
+.idea/
+*.swp
