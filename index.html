@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coldkar de Mexico</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         body {
@@ -13,11 +15,13 @@
             background-color: #020617;
             color: #f8fafc;
         }
+
         .glass {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .hero-mesh {
             position: relative;
             isolation: isolate;
@@ -29,6 +33,7 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .hero-mesh::after {
             content: '';
             position: absolute;
@@ -38,10 +43,19 @@
             animation: aurora 14s ease-in-out infinite alternate;
             z-index: -1;
         }
+
         @keyframes aurora {
-            0% { transform: translate(-10%, -10%) scale(1); filter: blur(40px); }
-            100% { transform: translate(10%, 10%) scale(1.2); filter: blur(60px); }
+            0% {
+                transform: translate(-10%, -10%) scale(1);
+                filter: blur(40px);
+            }
+
+            100% {
+                transform: translate(10%, 10%) scale(1.2);
+                filter: blur(60px);
+            }
         }
+
         .badge-stack {
             position: absolute;
             right: 2rem;
@@ -51,6 +65,7 @@
             gap: 0.75rem;
             z-index: 1;
         }
+
         .badge-stack .badge {
             border-radius: 1.25rem;
             padding: 0.85rem 1.25rem;
@@ -62,12 +77,14 @@
             align-items: center;
             gap: 0.75rem;
         }
+
         .badge .dot {
             width: 0.5rem;
             height: 0.5rem;
             border-radius: 999px;
             background: linear-gradient(120deg, #38bdf8, #a855f7);
         }
+
         .chip {
             border: 1px solid rgba(148, 163, 184, 0.4);
             border-radius: 999px;
@@ -78,11 +95,13 @@
             background: rgba(15, 23, 42, 0.4);
             transition: all 0.25s ease;
         }
+
         .chip.active {
             background: #f8fafc;
             color: #020617;
             border-color: transparent;
         }
+
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -93,15 +112,18 @@
             justify-content: center;
             z-index: 200;
         }
+
         .modal-overlay.active {
             display: flex;
         }
+
         .trust-card {
             border-radius: 2rem;
             border: 1px solid rgba(148, 163, 184, 0.2);
             background: rgba(15, 23, 42, 0.65);
             padding: 1.75rem;
         }
+
         .faq-icon {
             width: 42px;
             height: 42px;
@@ -111,11 +133,22 @@
             place-items: center;
             font-size: 1.2rem;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #020617; }
-        ::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 10px; }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e40af;
+            border-radius: 10px;
+        }
     </style>
 </head>
+
 <body class="overflow-x-hidden">
 
     <nav class="fixed w-full z-[100] px-6 py-4">
@@ -128,7 +161,8 @@
                 <a href="#" class="hover:text-blue-400 transition">Tecnología</a>
                 <a href="#" class="hover:text-blue-400 transition">Soporte</a>
             </div>
-            <button onclick="toggleCart()" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-xl flex items-center transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/20">
+            <button onclick="toggleCart()"
+                class="bg-blue-600 text-white px-5 py-2 rounded-xl flex items-center shadow-lg shadow-blue-500/20">
                 <span id="cart-count" class="mr-2 bg-white/20 px-2 rounded-md">0</span>
                 🛒 Carrito
             </button>
@@ -137,20 +171,24 @@
 
     <section class="hero-mesh min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
         <div class="relative z-10" data-aos="zoom-out" data-aos-duration="1500">
-            <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block italic">
+            <span
+                class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block italic">
                 Nueva Generación 2026
             </span>
             <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-                El frío que viaja <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">contigo.</span>
+                El frío que viaja <br><span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">contigo.</span>
             </h2>
             <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 font-light leading-relaxed">
                 Diseño minimalista y enfriamiento de grado industrial para vehículos y SUVs.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#productos" class="bg-white text-slate-950 px-10 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-colors duration-300">
+                <a href="#productos"
+                    class="bg-white text-slate-950 px-10 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-colors duration-300">
                     Ver Catálogo
                 </a>
-                <button onclick="openVehicleModal()" class="glass px-10 py-4 rounded-2xl font-bold hover:border-blue-500/60 transition duration-300">
+                <button onclick="openVehicleModal()"
+                    class="glass px-10 py-4 rounded-2xl font-bold hover:border-blue-500/60 transition duration-300">
                     Recomiéndame un modelo
                 </button>
             </div>
@@ -174,129 +212,132 @@
 
     <div id="vehicle-modal" class="modal-overlay px-6">
         <div class="glass max-w-lg w-full rounded-3xl p-8 relative">
-            <button class="absolute right-5 top-5 text-slate-400 hover:text-white" onclick="closeVehicleModal()">✕</button>
+            <button class="absolute right-5 top-5 text-slate-400 hover:text-white"
+                onclick="closeVehicleModal()">✕</button>
             <p class="text-xs uppercase tracking-[0.2em] text-blue-300 mb-3">Resuelve tus dudas</p>
             <h3 class="text-3xl font-bold mb-2">¿Qué manejas?</h3>
-            <p class="text-slate-400 mb-6">Elige tu tipo de vehículo y te mostraremos la configuración ideal de voltaje y capacidad.</p>
+            <p class="text-slate-400 mb-6">Elige tu tipo de vehículo y te mostraremos la configuración ideal de voltaje
+                y capacidad.</p>
             <div class="grid grid-cols-2 gap-3 mb-6" id="vehicle-buttons">
                 <button class="chip w-full text-center" onclick="selectVehicle('pickup', this)">Pickup</button>
                 <button class="chip w-full text-center" onclick="selectVehicle('suv', this)">SUV / Crossover</button>
                 <button class="chip w-full text-center" onclick="selectVehicle('van', this)">Van</button>
                 <button class="chip w-full text-center" onclick="selectVehicle('sedan', this)">Automóvil</button>
             </div>
-            <div id="vehicle-tip" class="rounded-2xl border border-slate-700 bg-slate-900/70 p-5 text-sm text-slate-300">
+            <div id="vehicle-tip"
+                class="rounded-2xl border border-slate-700 bg-slate-900/70 p-5 text-sm text-slate-300">
                 Selecciona una opción para ver la recomendación.
             </div>
             <div id="vehicle-actions" class="mt-6 flex flex-wrap gap-3 text-sm"></div>
         </div>
     </div>
 
-    <section id="productos" class="max-w-7xl mx-auto py-24 px-6">
-        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
-            <div data-aos="fade-right">
-                <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3">Modelos 2026</p>
-                <h3 class="text-3xl md:text-4xl font-bold mb-2">Plataforma Colku</h3>
-                <p class="text-slate-400 max-w-xl">Cada modelo incluye telemetría térmica, protección de batería de 3 niveles y compatibilidad dual para casa y auto.</p>
-            </div>
-            <div class="flex gap-3 text-xs text-slate-400 uppercase tracking-[0.2em]">
-                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span>Envío 48h</span>
-                <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400"></span>Garantía 2 años</span>
-            </div>
+    <section id="productos" class="max-w-7xl mx-auto py-24 px-6 text-center">
+        <div data-aos="fade-up" class="mb-16">
+            <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Catálogo Coldkar 2026</p>
+            <h3 class="text-3xl md:text-5xl font-black mb-4">Línea de Compresión Elite</h3>
+            <p class="text-slate-500 max-w-2xl mx-auto font-light">Tecnología Colku: Enfriamiento de -20°C para
+                cualquier terreno.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div id="product-colku" data-product="colku" data-aos="fade-up" class="group relative bg-slate-900/50 border border-slate-800 rounded-[2.5rem] p-3 hover:border-blue-500/50 transition-all duration-500">
-                <div class="overflow-hidden rounded-[2rem] h-64">
-                    <img src="src/img/imag01.webp" alt="Refrigerador Colku" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <div
+                class="group bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-4 hover:border-blue-500/50 transition-all duration-500 flex flex-col">
+                <div class="overflow-hidden rounded-[2rem] h-60 mb-6">
+                    <img src="src/img/imag01.webp"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        alt="Colku DC-15F">
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4 text-xs tracking-[0.3em] uppercase text-slate-400">
-                        <span>ColdKar</span>
-                        <span>14 litros</span>
+                <div class="px-4 pb-4 flex-grow text-left">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Colku DC-15F</h4>
+                        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded-lg font-bold">14L</span>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Colku DC-15F</h4>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed"> El mini refrigerador con reposabrazos DC-15F es el modelo de capacidad media de esta serie.</p>
-                    <div class="flex flex-wrap gap-2 mb-3" data-variant-group>
-                        <button class="chip active" onclick="selectVariant('colku','12V', this)">12V</button>
-                        <button class="chip" onclick="selectVariant('colku','24V', this)">24V</button>
-                        <button class="chip" onclick="selectVariant('colku','110V', this)">110V</button>
-                    </div>
-                    <p id="variant-colku" class="text-xs uppercase tracking-[0.2em] text-blue-200 mb-6">Compatibilidad ideal: dual 12/24V</p>
-                    <div class="flex justify-between items-center">
+                    <p class="text-slate-500 text-xs mb-6 line-clamp-2">Ideal para SUVs y Pickups. Eficiencia energética
+                        A+++.</p>
+
+                    <button onclick="openModal('colku15')"
+                        class="w-full mb-6 py-3 rounded-xl border border-white/5 bg-slate-800/50 hover:bg-slate-700 text-[10px] font-bold uppercase tracking-widest transition">
+                        Ver Ficha Técnica
+                    </button>
+
+                    <div class="flex justify-between items-center mt-auto">
                         <div>
-                            <p class="text-slate-400 text-xs">Desde</p>
-                            <span class="text-3xl font-black">$000</span>
+                            <span class="text-2xl font-black text-white">$4,650</span>
+                            <p class="text-[9px] text-emerald-400 font-bold uppercase tracking-tighter">
+                                🚚 Envío gratis a toda la República
+                            </p>
                         </div>
-                        <button onclick="addToCart('Colku DC-15F', 000)" class="bg-blue-600 text-white p-4 rounded-2xl hover:bg-white hover:text-blue-600 transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
-                            </svg>
+                        <button onclick="addToCart('Colku DC-15F', 4650)"
+                            class="bg-blue-600 text-white p-4 rounded-2xl hover:bg-white hover:text-blue-600 transition-all shadow-lg active:scale-95 font-bold">
+                            🛒 +
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div id="product-glacier" data-product="glacier" data-aos="fade-up" data-aos-delay="100" class="group relative bg-gradient-to-b from-slate-900/70 to-blue-950/40 border border-blue-900/40 rounded-[2.5rem] p-3 hover:border-blue-500/60 transition-all duration-500">
-                <div class="overflow-hidden rounded-[2rem] h-64">
-                    <img src="src/img/imag02.webp" alt="Refrigerador Glacier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div
+                class="group bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-4 hover:border-blue-500/50 transition-all duration-500 flex flex-col">
+                <div class="overflow-hidden rounded-[2rem] h-60 mb-6">
+                    <img src="src/img/imag02.webp"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        alt="Colku DC-10F">
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4 text-xs tracking-[0.3em] uppercase text-slate-300">
-                        <span>ColdKar</span>
-                        <span>10 litros</span>
+                <div class="px-4 pb-4 flex-grow text-left">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Colku DC-10F</h4>
+                        <span class="text-[10px] bg-blue-500/10 text-blue-400 px-2 py-1 rounded-lg font-bold">10L</span>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Colku DC-10F</h4>
-                    <p class="text-slate-300 text-sm mb-4 leading-relaxed">El mini refrigerador con reposabrazos DC-10F es el más pequeño de esta serie.</p>
-                    <div class="flex flex-wrap gap-2 mb-3" data-variant-group>
-                        <button class="chip active" onclick="selectVariant('colku','12V', this)">12V</button>
-                        <button class="chip" onclick="selectVariant('colku','24V', this)">24V</button>
-                        <button class="chip" onclick="selectVariant('colku','110V', this)">110V</button>
-                    </div>
-                    <p id="variant-glacier" class="text-xs uppercase tracking-[0.2em] text-blue-100 mb-6">Compatibilidad ideal: Dual 12/24V</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-slate-400 text-xs">Desde</p>
-                            <span class="text-3xl font-black">$000</span>
-                        </div>
-                        <button onclick="addToCart('Colku DC-10F', 000)" class="bg-white text-blue-900 p-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
-                            </svg>
+                    <p class="text-slate-500 text-xs mb-6 line-clamp-2">Diseño ultra-compacto. Cabe en cualquier
+                        reposabrazos.</p>
+
+                    <button onclick="openModal('colku10')"
+                        class="w-full mb-6 py-3 rounded-xl border border-white/5 bg-slate-800/50 hover:bg-slate-700 text-[10px] font-bold uppercase tracking-widest transition">
+                        Ver Ficha Técnica
+                    </button>
+
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-black text-white">$4,500</span>
+                        <button onclick="addToCart('Colku DC-10F', 4500)"
+                            class="bg-blue-600 text-white p-4 rounded-2xl hover:bg-white hover:text-blue-600 transition-all shadow-lg shadow-blue-500/20 active:scale-95 font-bold">
+                            🛒 +
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div id="product-fleet" data-product="fleet" data-aos="fade-up" data-aos-delay="200" class="group relative bg-slate-900/50 border border-slate-800 rounded-[2.5rem] p-3 hover:border-emerald-500/50 transition-all duration-500">
-                <div class="overflow-hidden rounded-[2rem] h-64">
-                    <img src="src/img/imag03.webp" alt="Refrigerador Fleet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div
+                class="group bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-4 hover:border-emerald-500/50 transition-all duration-500 flex flex-col">
+                <div class="overflow-hidden rounded-[2rem] h-60 mb-6">
+                    <img src="src/img/imag03.webp"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        alt="Colku BF-8H">
                 </div>
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4 text-xs tracking-[0.3em] uppercase text-slate-400">
-                        <span>ColdKar</span>
-                        <span>42 litros</span>
+                <div class="px-4 pb-4 flex-grow text-left">
+                    <div class="flex justify-between items-center mb-2">
+                        <h4 class="text-xl font-bold uppercase tracking-tight">Colku BF-8H</h4>
+                        <span
+                            class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded-lg font-bold">42L</span>
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Colku BF-8H</h4>
-                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">BF-8H mini reposabrazos refrigerador no es solo un congelador sino también un calentador, y la temperatura configurable es de -18-10 ℃ (enfriamiento) a 10-55 ℃ (calentamiento).</p>
-                    <div class="flex flex-wrap gap-2 mb-3" data-variant-group>
-                        <button class="chip active" onclick="selectVariant('colku','12V', this)">12V</button>
-                        <button class="chip" onclick="selectVariant('colku','24V', this)">24V</button>
-                        <button class="chip" onclick="selectVariant('colku','110V', this)">110V</button>
-                    </div>
-                    <p id="variant-fleet" class="text-xs uppercase tracking-[0.2em] text-emerald-200 mb-6">Compatibilidad ideal: Dual 12/24V</p>
-                    <div class="flex justify-between items-center">
-                        <div>
-                            <p class="text-slate-400 text-xs">Desde</p>
-                            <span class="text-3xl font-black">$000</span>
-                        </div>
-                        <button onclick="addToCart('Colku BF-8H', 000)" class="bg-emerald-500 text-slate-900 p-4 rounded-2xl hover:bg-white transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
-                            </svg>
+                    <p class="text-slate-500 text-xs mb-6 line-clamp-2">Sistema Dual Frío/Calor. Capacidad familiar de
+                        alto flujo.</p>
+
+                    <button onclick="openModal('bf8h')"
+                        class="w-full mb-6 py-3 rounded-xl border border-white/5 bg-slate-800/50 hover:bg-slate-700 text-[10px] font-bold uppercase tracking-widest transition">
+                        Ver Ficha Técnica
+                    </button>
+
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-2xl font-black text-white">$6,100</span>
+                        <button onclick="addToCart('Colku BF-8H', 6100)"
+                            class="bg-emerald-600 text-white p-4 rounded-2xl hover:bg-white hover:text-emerald-600 transition-all shadow-lg shadow-emerald-500/20 active:scale-95 font-bold">
+                            🛒 +
                         </button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -305,7 +346,8 @@
             <div class="flex-1">
                 <p class="text-xs uppercase tracking-[0.4em] text-emerald-300 mb-4">Confianza en ruta</p>
                 <h3 class="text-3xl font-bold mb-4">Adoptado por flotillas y aventureros</h3>
-                <p class="text-slate-400 mb-6">Más de 1,800 vehículos equipados en México con monitoreo activo de temperatura y soporte 24/7.</p>
+                <p class="text-slate-400 mb-6">Más de 1,800 vehículos equipados en México con monitoreo activo de
+                    temperatura y soporte 24/7.</p>
                 <div class="flex gap-6 text-2xl font-black">
                     <div>
                         <span class="block text-emerald-300">98%</span>
@@ -323,12 +365,14 @@
             </div>
             <div class="flex-1 grid sm:grid-cols-2 gap-4">
                 <div class="trust-card">
-                    <p class="text-sm text-slate-400 mb-4">“Instalamos la serie Colku DC-15F en 12 vans. Ahorro real de batería y soporte remoto en menos de 5 min.”</p>
+                    <p class="text-sm text-slate-400 mb-4">“Instalamos la serie Colku DC-15F en 12 vans. Ahorro real de
+                        batería y soporte remoto en menos de 5 min.”</p>
                     <p class="font-semibold">Adriana Leal</p>
                     <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Operaciones · ChillBox Logistics</p>
                 </div>
                 <div class="trust-card border-dashed">
-                    <p class="text-sm text-slate-400 mb-4">“El modo dual es perfecto para viajes familiares. Mantenemos congelados y bebidas sin mezclar temperaturas.”</p>
+                    <p class="text-sm text-slate-400 mb-4">“El modo dual es perfecto para viajes familiares. Mantenemos
+                        congelados y bebidas sin mezclar temperaturas.”</p>
                     <p class="font-semibold">Carlos Téllez</p>
                     <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Overlander · Nayarit</p>
                 </div>
@@ -353,7 +397,9 @@
                     <span id="icon-1" class="text-blue-500 transition-transform duration-300">＋</span>
                 </button>
                 <div id="faq-1" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Nuestros refrigeradores cuentan con un sistema de protección de batería de 3 niveles. Se apagan automáticamente si detectan que el voltaje del auto es bajo, asegurando que siempre puedas encender tu motor.
+                    Nuestros refrigeradores cuentan con un sistema de protección de batería de 3 niveles. Se apagan
+                    automáticamente si detectan que el voltaje del auto es bajo, asegurando que siempre puedas encender
+                    tu motor.
                 </div>
             </div>
 
@@ -367,7 +413,8 @@
                     <span id="icon-2" class="text-blue-500 transition-transform duration-300">＋</span>
                 </button>
                 <div id="faq-2" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Utilizamos compresores de alta eficiencia que permiten alcanzar hasta los -20°C. Puedes llevar helados o carne congelada sin problemas, incluso en climas de desierto.
+                    Utilizamos compresores de alta eficiencia que permiten alcanzar hasta los -20°C. Puedes llevar
+                    helados o carne congelada sin problemas, incluso en climas de desierto.
                 </div>
             </div>
 
@@ -381,35 +428,48 @@
                     <span id="icon-3" class="text-blue-500 transition-transform duration-300">＋</span>
                 </button>
                 <div id="faq-3" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Sí, todos nuestros modelos Arctic Stealth incluyen el cable DC (12V/24V) para el encendedor del auto y un transformador AC (110V/220V) para conectarlo a cualquier enchufe de pared.
+                    Sí, todos nuestros modelos Arctic Stealth incluyen el cable DC (12V/24V) para el encendedor del auto
+                    y un transformador AC (110V/220V) para conectarlo a cualquier enchufe de pared.
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-full md:w-[400px] glass z-[150] translate-x-full transition-transform duration-500 p-8 flex flex-col">
+    <div id="cart-sidebar"
+        class="fixed right-0 top-0 h-full w-full md:w-[400px] glass z-[150] translate-x-full transition-transform duration-500 p-8 flex flex-col">
         <div class="flex justify-between items-center mb-10">
             <h3 class="text-2xl font-bold">Tu Selección</h3>
             <button onclick="toggleCart()" class="text-slate-400 hover:text-white">Cerrar ✕</button>
         </div>
-        <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] text-slate-500 mb-8">
-            <span class="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 border border-blue-500/40">1. Selección</span>
-            <span class="px-3 py-1 rounded-full border border-slate-700">2. Datos</span>
-            <span class="px-3 py-1 rounded-full border border-slate-700">3. Pago</span>
+        <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] mb-8">
+            <span id="step-1"
+                class="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 border border-blue-500/40 transition-all duration-500">
+                1. Selección
+            </span>
+            <span id="step-2"
+                class="px-3 py-1 rounded-full border border-slate-700 text-slate-500 transition-all duration-500">
+                2. Datos
+            </span>
+            <span id="step-3"
+                class="px-3 py-1 rounded-full border border-slate-700 text-slate-500 transition-all duration-500">
+                3. Pago
+            </span>
         </div>
-        
+
         <div id="cart-items" class="flex-grow space-y-6 overflow-y-auto pr-2">
-            </div>
+        </div>
 
         <div class="mt-auto border-t border-slate-700 pt-8">
             <div class="flex justify-between text-xl font-bold mb-6">
                 <span>Total estimado</span>
                 <span id="cart-total" class="text-blue-400">$0</span>
             </div>
-            <a href="TU_LINK_DE_MERCADO_PAGO" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-5 rounded-2xl font-bold shadow-xl shadow-blue-600/20 transition-all transform active:scale-95">
-                Finalizar Compra vía Mercado Pago
-            </a>
-            <a href="https://wa.me/TU_NUMERO_AQUI?text=Quiero%20asesor%C3%ADa%20antes%20de%20comprar" target="_blank" class="block w-full mt-3 border border-emerald-500/40 text-emerald-300 text-center py-4 rounded-2xl font-semibold hover:bg-emerald-500/10 transition">
+            <button onclick="iniciarProcesoPago()"
+                class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-5 rounded-2xl font-bold shadow-xl shadow-blue-600/20 transition-all transform active:scale-95 uppercase tracking-widest">
+                Finalizar Compra
+            </button>
+            <a href="https://wa.me/cel?text=Quiero%20asesor%C3%ADa%20antes%20de%20comprar" target="_blank"
+                class="block w-full mt-3 border border-emerald-500/40 text-emerald-300 text-center py-4 rounded-2xl font-semibold hover:bg-emerald-500/10 transition">
                 Habla con un especialista
             </a>
             <p class="text-center text-xs text-slate-500 mt-4 italic text-balance">
@@ -534,9 +594,9 @@
         }
 
         function addToCart(name, price) {
-            cart.push({name, price});
+            cart.push({ name, price });
             updateCart();
-            if(!document.getElementById('cart-sidebar').classList.contains('translate-x-0')) {
+            if (!document.getElementById('cart-sidebar').classList.contains('translate-x-0')) {
                 toggleCart();
             }
         }
@@ -546,26 +606,42 @@
             const itemsDiv = document.getElementById('cart-items');
             const totalSpan = document.getElementById('cart-total');
 
+            // Actualiza el contador circular del menú
             count.innerText = cart.length;
-            
-            if(cart.length === 0) {
-                itemsDiv.innerHTML = '<p class="text-slate-500 text-center">Tu carrito está vacío.</p>';
+
+            if (cart.length === 0) {
+                itemsDiv.innerHTML = '<p class="text-slate-500 text-center py-10 italic">Tu carrito está vacío.</p>';
             } else {
                 itemsDiv.innerHTML = cart.map((item, index) => `
-                    <div class="flex justify-between items-center bg-slate-800/50 p-4 rounded-xl border border-slate-700">
-                        <div>
-                            <p class="font-bold text-sm">${item.name}</p>
-                            <p class="text-blue-400 text-xs font-bold">$${item.price}</p>
-                        </div>
-                        <button onclick="removeItem(${index})" class="text-red-400 text-xs hover:underline">Quitar</button>
-                    </div>
-                `).join('');
+            <div class="flex justify-between items-center bg-slate-800/40 p-4 rounded-2xl border border-white/5 shadow-inner">
+                <div>
+                    <p class="font-bold text-sm uppercase tracking-tight">${item.name}</p>
+                    <p class="text-blue-400 text-xs font-black">$${item.price.toLocaleString()}.00</p>
+                </div>
+                <button onclick="removeItem(${index})" class="text-red-400/60 text-[10px] uppercase font-bold hover:text-red-400 transition">
+                    Quitar
+                </button>
+            </div>
+        `).join('');
             }
 
+            // Calculamos el total
             const total = cart.reduce((acc, item) => acc + item.price, 0);
-            totalSpan.innerText = `$${total}`;
-        }
 
+            // Inyectamos el total con el mensaje de Envío Gratis
+            if (total > 0) {
+                totalSpan.innerHTML = `
+            <div class="text-right">
+                <span class="block text-2xl font-black text-white">$${total.toLocaleString()}.00</span>
+                <span class="block text-[10px] text-emerald-400 font-bold uppercase tracking-[0.1em] mt-1">
+                    🚚 Envío gratis a toda la República
+                </span>
+            </div>
+        `;
+            } else {
+                totalSpan.innerText = "$0.00";
+            }
+        }
         function removeItem(index) {
             cart.splice(index, 1);
             updateCart();
@@ -609,29 +685,180 @@
         });
 
         updateCart();
+
+        const productData = {
+            colku15: {
+                title: "Colku DC-15F",
+                tag: "Capacidad Media",
+                desc: "El mini refrigerador con reposabrazos DC-15F es el equilibrio perfecto entre tamaño y rendimiento. Ideal para SUVs y vehículos de aventura.",
+                price: "$4,650.00",
+                rawPrice: 4650,
+                img: "src/img/imag01.webp",
+                specs: ["Capacidad: 14L", "Voltaje: 12V/24V", "Rango: -18°C a 10°C", "Ruido: <45dB", "Peso: 9.5kg", "Compresor: Inverter"],
+                gallery: ["src/img/imag01.webp", "src/img/imag01_detalle.webp"]
+            },
+            // Agrega aquí colku10 y bf8h con su info...
+        };
+
+        function openModal(id) {
+            const p = productData[id];
+            document.getElementById('modal-title').innerText = p.title;
+            document.getElementById('modal-tag').innerText = p.tag;
+            document.getElementById('modal-desc').innerText = p.desc;
+            document.getElementById('modal-price').innerText = p.price;
+            document.getElementById('modal-main-img').src = p.img;
+
+            // Cargar Specs
+            const specsUl = document.getElementById('modal-specs');
+            specsUl.innerHTML = p.specs.map(s => `<li>• ${s}</li>`).join('');
+
+            // Configurar botón del modal
+            document.getElementById('modal-add-btn').onclick = () => {
+                addToCart(p.title, p.rawPrice);
+                closeModal();
+            };
+
+            document.getElementById('product-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Bloquear scroll de fondo
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function iniciarProcesoPago() {
+            if (cart.length === 0) return alert("Agrega un producto primero");
+
+            const s1 = document.getElementById('step-1');
+            const s2 = document.getElementById('step-2');
+            const s3 = document.getElementById('step-3');
+
+            // 1. Apagamos el paso 1 y encendemos el 2 (Simulando "Procesando Datos")
+            s1.classList.replace('text-blue-200', 'text-slate-500');
+            s1.classList.replace('border-blue-500/40', 'border-slate-700');
+
+            s2.classList.add('bg-blue-600/20', 'text-blue-200', 'border-blue-500/40', 'animate-pulse');
+            s2.classList.remove('text-slate-500', 'border-slate-700');
+
+            // 2. Esperamos un segundo y encendemos el 3 (Simulando "Conectando con Banco")
+            setTimeout(() => {
+                s2.classList.remove('animate-pulse');
+                s3.classList.add('bg-blue-600/20', 'text-blue-200', 'border-blue-500/40');
+                s3.classList.remove('text-slate-500', 'border-slate-700');
+
+                // 3. Finalmente redirigimos a Mercado Pago
+                // REEMPLAZA ESTE LINK POR EL TUYO REAL
+                window.open('https://link.mercadopago.com.mx/coldkarmx', '_blank');
+
+            }, 1200); // El tiempo de espera es de 1.2 segundos
+        }
+
     </script>
 
-    <a href="https://wa.me/numero?text=Hola!%20Estoy%20interesado%20en%20un%20refrigerador%20Colku" 
-       target="_blank" 
-       class="fixed bottom-8 left-8 z-[200] group flex items-center shadow-2xl shadow-green-500/20"
-       data-aos="fade-right" data-aos-delay="500">
-        
+    <a href="[https://wa.me/521cel?text=%C2%A1Hola!%20Acabo%20de%20hacer%20mi%20pedido%20en%20la%20web%20de%20Coldkar%20MX%20y%20quiero%20coordinar%20el%20env%C3%ADo](https://wa.me/521TU_NUMERO_AQUI?text=%C2%A1Hola!%20Acabo%20de%20hacer%20mi%20pedido%20en%20la%20web%20de%20Coldkar%20MX%20y%20quiero%20coordinar%20el%20env%C3%ADo)"
+        target="_blank" class="fixed bottom-8 left-8 z-[200] group flex items-center shadow-2xl shadow-green-500/20"
+        data-aos="fade-right">
+
         <span class="absolute -top-1 -right-1 flex h-4 w-4 z-10">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
         </span>
 
-        <div class="bg-slate-900 border border-slate-800 p-3 rounded-2xl flex items-center gap-3 group-hover:bg-blue-600 transition-all duration-500">
-            <div class="bg-green-500 p-2 rounded-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464zm11.511-7.237c-.301-.15-1.782-.879-2.057-.979-.275-.1-.475-.15-.675.15-.2.3-.775 1.05-.95 1.25-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.794-1.49-1.774-1.665-2.074-.175-.3-.019-.463.13-.612.134-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.625-.925-2.225-.244-.589-.491-.51-.675-.519-.175-.009-.375-.01-.575-.01-.2 0-.525.075-.8.375-.275.3-1.05 1.025-1.05 2.5s1.075 2.9 1.225 3.1c.15.2 2.115 3.227 5.125 4.532.716.311 1.274.497 1.71.637.72.229 1.375.196 1.892.119.577-.086 1.782-.729 2.032-1.434.25-.705.25-1.309.175-1.434-.075-.125-.275-.2-.575-.35z"/>
+        <div
+            class="bg-slate-900 border border-slate-800 p-3 rounded-2xl flex items-center gap-3 group-hover:bg-blue-600 transition-all duration-500">
+            <div class="bg-green-500 p-2 rounded-xl group-hover:scale-110 transition-transform">
+                <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
                 </svg>
             </div>
-            <div class="pr-2">
-                <p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Contactános</p>
-                <p class="text-sm font-bold text-white leading-none">Resuelve tus dudas</p>
+            <div class="pr-2 text-left">
+                <p
+                    class="text-[9px] uppercase font-bold text-slate-500 group-hover:text-blue-100 leading-none mb-1 tracking-tighter">
+                    Coordinar Envío</p>
+                <p class="text-xs font-bold text-white leading-none">Ventas Coldkar</p>
             </div>
         </div>
     </a>
+
+    <div id="product-modal" class="fixed inset-0 z-[250] hidden flex items-center justify-center p-4">
+        <div onclick="closeModal()" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+
+        <div
+            class="glass max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-[3rem] relative z-[260] flex flex-col md:flex-row shadow-2xl border border-white/10">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-white z-10 text-2xl">✕</button>
+
+            <div class="md:w-1/2 p-8">
+                <div class="rounded-[2rem] overflow-hidden bg-slate-800 h-80 mb-4 text-center">
+                    <img id="modal-main-img" src="" class="w-full h-full object-cover">
+                </div>
+                <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto pb-2">
+                </div>
+            </div>
+
+            <div class="md:w-1/2 p-8 flex flex-col justify-center text-left">
+                <span id="modal-tag" class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mb-2"></span>
+                <div
+                    class="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                    </svg>
+                    Envío gratis a toda la República
+                </div>
+                <h3 id="modal-title" class="text-3xl font-bold mb-4"></h3>
+                <p id="modal-desc" class="text-slate-400 text-sm mb-6 leading-relaxed"></p>
+
+                <div class="space-y-3 mb-8">
+                    <h4 class="text-white font-bold text-sm uppercase tracking-tighter">Especificaciones:</h4>
+                    <ul id="modal-specs" class="grid grid-cols-2 gap-2 text-xs text-slate-300">
+                    </ul>
+                </div>
+
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                    <div>
+                        <p class="text-slate-500 text-[10px] uppercase font-bold">Precio total</p>
+                        <span id="modal-price" class="text-3xl font-black text-white"></span>
+                    </div>
+                    <button id="modal-add-btn"
+                        class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-blue-600 transition-all">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<footer class="py-12 border-t border-white/5 bg-slate-950/50 mt-20">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        
+        <div class="flex flex-col items-center md:items-start">
+            <h4 class="text-xl font-black tracking-tighter uppercase leading-none">
+                COLDKAR<span class="text-blue-500">MX</span>
+            </h4>
+            <span class="text-[8px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-1 italic">
+                Siempre Frío
+            </span>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <a href="#" onclick="alert('Aquí irá tu texto legal de Aviso de Privacidad.')" class="hover:text-blue-400 transition-colors">
+                Aviso de Privacidad
+            </a>
+            <a href="#" onclick="alert('Aquí irán tus Términos y Condiciones.')" class="hover:text-blue-400 transition-colors">
+                Términos y Condiciones
+            </a>
+            <a href="#faq" class="hover:text-blue-400 transition-colors">Soporte</a>
+        </div>
+
+        <div class="text-[10px] text-slate-600 uppercase tracking-widest text-center md:text-right">
+            <p>Coldkar de México © 2026</p>
+            <p class="mt-1 font-light italic">Equipamiento para Overlanding & Off-Road</p>
+        </div>
+    </div>
+</footer>
 </html>
