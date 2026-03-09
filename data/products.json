@@ -1,0 +1,140 @@
+[
+  {
+    "id": "dc-10f",
+    "nombre": "ColdKar Urban DC-10F",
+    "categoria": "Descansabrazos / Portátil",
+    "precio": 4500,
+    "descripcion": "Diseño ultra-delgado ideal para consolas centrales estrechas. Máximo rendimiento en el mínimo espacio.",
+    "specs": {
+      "capacidad": "10 Litros",
+      "rango": "-18°C a +10°C",
+      "dimensiones": "53.5 x 19 x 35.5 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Compresor silencioso", "Ajuste perfecto en SUV", "Bajo consumo"],
+    "imagenes": [
+      "src/img/dc-10f/dc-10f-main.webp",
+      "src/img/dc-10f/dc-10f-detail.jpeg",
+      "src/img/dc-10f/dc-10f-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Urban DC-10F - Refrigerador portátil 10 litros para consola central"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-dc10f"
+  },
+  {
+    "id": "dc-15f",
+    "nombre": "ColdKar Urban DC-15F",
+    "categoria": "Descansabrazos / Portátil",
+    "precio": 4650,
+    "descripcion": "Versatilidad total con correa de transporte. Llévalo del asiento de tu auto al picnic sin perder el frío.",
+    "specs": {
+      "capacidad": "15 Litros",
+      "rango": "-18°C a +10°C",
+      "dimensiones": "53.5 x 23 x 35.5 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Correa de hombro incluida", "Luz LED interna", "Enfriamiento rápido"],
+    "imagenes": [
+      "src/img/dc-15f/dc-15f-main.webp",
+      "src/img/dc-15f/dc-15f-detail.jpeg",
+      "src/img/dc-15f/dc-15f-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Urban DC-15F - Refrigerador portátil 15 litros con correa de transporte"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-dc15f"
+  },
+  {
+    "id": "bf-8h",
+    "nombre": "ColdKar Elite BF-8H",
+    "categoria": "Consola Premium",
+    "precio": 6100,
+    "descripcion": "La joya de la corona para camionetas de lujo. Integración tipo original con función de calefacción y enfriamiento.",
+    "specs": {
+      "capacidad": "8 Litros",
+      "rango": "-5°C a +50°C",
+      "dimensiones": "51.3 x 18.5 x 38.5 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Función Frío/Calor", "Acabado de lujo", "Instalación fija"],
+    "imagenes": [
+      "src/img/bf-8h/bf-8h-main.webp",
+      "src/img/bf-8h/bf-8h-detail.jpeg",
+      "src/img/bf-8h/bf-8h-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Elite BF-8H - Consola premium 8 litros función frío y calor"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-bf8h"
+  },
+  {
+    "id": "cr-30x",
+    "nombre": "ColdKar Drawer CR-30X",
+    "categoria": "Cajón Empotrable",
+    "precio": 6500,
+    "descripcion": "Optimización de espacio para Overland y Campers. Acceso frontal deslizante con acabado en acero.",
+    "specs": {
+      "capacidad": "30 Litros",
+      "rango": "-12°C a +10°C",
+      "dimensiones": "44 x 70 x 25 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Cajón deslizante", "Acero inoxidable", "Ahorro de espacio"],
+    "imagenes": [
+      "src/img/cr-30x/cr-30x-main.jpeg",
+      "src/img/cr-30x/cr-30x-detail.jpeg",
+      "src/img/cr-30x/cr-30x-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Drawer CR-30X - Cajón empotrable 30 litros acceso deslizante"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-cr30x"
+  },
+  {
+    "id": "cr-40x",
+    "nombre": "ColdKar Drawer CR-40X",
+    "categoria": "Cajón Empotrable",
+    "precio": 7100,
+    "descripcion": "El equilibrio perfecto para sistemas modulares en camionetas de trabajo o recreativas.",
+    "specs": {
+      "capacidad": "40 Litros",
+      "rango": "-12°C a +10°C",
+      "dimensiones": "44 x 70 x 30 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Compresor reforzado", "Rieles de alta resistencia", "Elegancia total"],
+    "imagenes": [
+      "src/img/cr-40x/cr-40x-main.jpeg",
+      "src/img/cr-40x/cr-40x-detail.jpeg",
+      "src/img/cr-40x/cr-40x-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Drawer CR-40X - Cajón empotrable 40 litros sistema modular"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-cr40x"
+  },
+  {
+    "id": "cr-50x",
+    "nombre": "ColdKar Drawer CR-50X",
+    "categoria": "Cajón Empotrable",
+    "precio": 7700,
+    "descripcion": "Capacidad máxima de almacenamiento con la elegancia del sistema Drawer. Para expediciones largas.",
+    "specs": {
+      "capacidad": "50 Litros",
+      "rango": "-12°C a +10°C",
+      "dimensiones": "44 x 70 x 35 cm",
+      "voltaje": "12V / 24V DC"
+    },
+    "features": ["Gran capacidad", "Instalación empotrada", "Ideal para RV"],
+    "imagenes": [
+      "src/img/cr-50x/cr-50x-main.jpeg",
+      "src/img/cr-50x/cr-50x-detail.jpeg",
+      "src/img/cr-50x/cr-50x-inside.jpeg"
+    ],
+    "alt_text": [
+      "ColdKar Drawer CR-50X - Cajón empotrable 50 litros para expediciones"
+    ],
+    "linkML": "https://listado.mercadolibre.com.mx/coldkar-cr50x"
+  }
+]
