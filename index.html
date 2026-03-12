@@ -26,7 +26,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
-        body {
+       html {
+            scroll-behavior: smooth;
+        }
+       
+       body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #020617;
             color: #f8fafc;
@@ -504,34 +508,69 @@
         </div>
     </section>
 
-    <!-- ── Soporte ── -->
-    <section id="soporte" class="max-w-5xl mx-auto py-24 px-6">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Centro de Ayuda</p>
-            <h3 class="text-3xl md:text-5xl font-black mb-4">Soporte Coldkar</h3>
-            <p class="text-slate-400 max-w-2xl mx-auto font-light">Manuales, guías de instalación y respuestas a las preguntas más comunes.</p>
-        </div>
-
-        <!-- Soporte texto -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-4xl mx-auto">
-    <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-blue-500/50 transition-colors group text-left">
-        <div class="bg-blue-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">⚡</span>
-        </div>
-        <h4 class="text-xl font-bold text-white mb-3">Guía de Inicio Rápido</h4>
-        <p class="text-slate-400 text-sm mb-6">Los 3 pasos esenciales para conectar tu equipo y optimizar el enfriamiento en tu primer viaje.</p>
-        <button onclick="toggleFaq(2)" class="text-blue-400 text-sm font-bold uppercase tracking-wider hover:text-white transition">Ver pasos básicos →</button>
+   <section id="soporte" class="max-w-5xl mx-auto py-24 px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+        <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Centro de Ayuda</p>
+        <h3 class="text-3xl md:text-5xl font-black mb-4">Soporte Coldkar</h3>
+        <p class="text-slate-400 max-w-2xl mx-auto font-light">Guías y respuestas a las preguntas más comunes.</p>
     </div>
 
-    <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-emerald-500/50 transition-colors group text-left">
-        <div class="bg-emerald-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <span class="text-2xl">🛠️</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-4xl mx-auto">
+        <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-blue-500/50 transition-colors group text-left">
+            <div class="bg-blue-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">⚡</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-3">Guía de Inicio Rápido</h4>
+            <p class="text-slate-400 text-sm mb-6">Los 3 pasos esenciales para conectar tu equipo y optimizar el enfriamiento en tu primer viaje.</p>
+            <a href="#pasos-basicos" class="text-blue-400 text-sm font-bold uppercase tracking-wider hover:text-white transition inline-block">Ver pasos básicos →</a>
         </div>
-        <h4 class="text-xl font-bold text-white mb-3">Asistencia Técnica Premium</h4>
-        <p class="text-slate-400 text-sm mb-6">¿Necesitas ayuda con la configuración? Nuestro equipo técnico te asesora en tiempo real.</p>
-        <a href="https://wa.me/525512580859?text=Hola,%20necesito%20asistencia%20técnica%20con%20mi%20equipo" target="_blank" class="text-emerald-400 text-sm font-bold uppercase tracking-wider hover:text-white transition">Contactar por WhatsApp →</a>
+
+        <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-emerald-500/50 transition-colors group text-left">
+            <div class="bg-emerald-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <span class="text-2xl">🛠️</span>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-3">Asistencia Técnica Premium</h4>
+            <p class="text-slate-400 text-sm mb-6">¿Necesitas ayuda con la configuración? Nuestro equipo técnico te asesora en tiempo real.</p>
+            <a href="https://wa.me/525512580859?text=Hola,%20necesito%20asistencia%20técnica%20con%20mi%20equipo" target="_blank" class="text-emerald-400 text-sm font-bold uppercase tracking-wider hover:text-white transition">Contactar por WhatsApp →</a>
+        </div>
     </div>
-</div>
+
+    <div id="pasos-basicos" class="glass p-8 md:p-12 rounded-[2rem] border border-slate-800 mt-10 max-w-4xl mx-auto scroll-mt-24" data-aos="fade-up">
+        <div class="flex items-center gap-4 mb-10">
+            <div class="bg-blue-500/20 p-3 rounded-2xl">
+                <span class="text-2xl">❄️</span>
+            </div>
+            <div>
+                <h4 class="text-2xl font-bold text-white">Ruta de Inicio Crítica</h4>
+                <p class="text-blue-400/60 text-xs uppercase tracking-widest font-bold">Configuración estándar Coldkar</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="relative">
+                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">01</span>
+                <div class="relative z-10">
+                    <h5 class="text-white font-bold mb-2">Energía Estable</h5>
+                    <p class="text-slate-400 text-xs leading-relaxed">Conecta a la toma de 12V/24V. Asegúrate de que el conector entre hasta el fondo para evitar arcos eléctricos.</p>
+                </div>
+            </div>
+            <div class="relative">
+                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">02</span>
+                <div class="relative z-10">
+                    <h5 class="text-white font-bold mb-2">Flujo de Aire</h5>
+                    <p class="text-slate-400 text-xs leading-relaxed">Mantén despejadas las rejillas de ventilación (mínimo 10cm). El calor del compresor necesita salir libremente.</p>
+                </div>
+            </div>
+            <div class="relative">
+                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">03</span>
+                <div class="relative z-10">
+                    <h5 class="text-white font-bold mb-2">Pre-Enfriado</h5>
+                    <p class="text-slate-400 text-xs leading-relaxed">Enciende el equipo a -18°C vacío por 30 min. Una vez frío, introduce tus alimentos para mantener la cadena de frío.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- FAQ Accordion -->
         <div class="max-w-4xl mx-auto" data-aos="fade-up">
@@ -869,7 +908,6 @@
                 s3.classList.remove('text-slate-500', 'border-slate-700');
 
                 // 3. Finalmente redirigimos a Mercado Pago
-                // REEMPLAZA ESTE LINK POR EL TUYO REAL
                 window.open('https://link.mercadopago.com.mx/coldkarmx', '_blank');
 
             }, 1200); // El tiempo de espera es de 1.2 segundos
@@ -878,31 +916,33 @@
     </script>
     <script src="js/main.js"></script>
 
-    <a href="https://wa.me/525512580859?text=Hola%20Coldkar%20MX,%20me%20gustaría%20más%20información" 
+<a href="https://wa.me/525512580859?text=Hola%20Coldkar%20MX,%20me%20gustaría%20más%20información" 
    target="_blank" 
-   class="fixed bottom-8 right-8 z-[200] bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+   class="fixed bottom-4 right-4 z-[200] bg-[#25D366] p-2 md:p-1 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
 
-        <span class="absolute -top-1 -right-1 flex h-4 w-4 z-10">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500"></span>
-        </span>
+    <span class="absolute -top-1 -right-1 flex h-3 w-3 md:h-4 md:w-4 z-10">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 md:h-4 md:w-4 bg-green-500"></span>
+    </span>
 
-        <div
-            class="bg-slate-900 border border-slate-800 p-3 rounded-2xl flex items-center gap-3 group-hover:bg-blue-600 transition-all duration-500">
-            <div class="bg-green-500 p-2 rounded-xl group-hover:scale-110 transition-transform">
-                <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
-                    <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
-                </svg>
-            </div>
-            <div class="pr-2 text-left">
-                <p
-                    class="text-[9px] uppercase font-bold text-slate-500 group-hover:text-blue-100 leading-none mb-1 tracking-tighter">
-                    Coordinar Envío</p>
-                <p class="text-xs font-bold text-white leading-none">Ventas Coldkar</p>
-            </div>
+    <div class="hidden md:flex bg-slate-900 border border-slate-800 p-3 rounded-2xl items-center gap-3 group-hover:bg-blue-600 transition-all duration-500">
+        <div class="bg-green-500 p-2 rounded-xl group-hover:scale-110 transition-transform">
+            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
+            </svg>
         </div>
-    </a>
+        <div class="pr-2 text-left">
+            <p class="text-[9px] uppercase font-bold text-slate-500 group-hover:text-blue-100 leading-none mb-1 tracking-tighter">Coordinar Envío</p>
+            <p class="text-xs font-bold text-white leading-none">Ventas Coldkar</p>
+        </div>
+    </div>
+
+    <div class="md:hidden">
+        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
+        </svg>
+    </div>
+</a>
 
     <div id="product-modal" class="fixed inset-0 z-[250] hidden flex items-center justify-center p-4">
         <div onclick="closeModal()" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
@@ -1031,17 +1071,17 @@
                 <div>
                     <h5 class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mb-5">Síguenos</h5>
                     <div class="flex gap-3">
-                        <a href="#" class="social-icon-glow cold-glow" aria-label="Facebook">
+                        <a href="https://www.facebook.com/share/1Ar2QZXDRX/" target="_blank" rel="noopener noreferrer" 
+                        class="social-icon-glow cold-glow" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-icon-glow cold-glow" aria-label="Instagram">
+                        <a href="https://www.instagram.com/coldkarmx?igsh=ZjQwOHh0bnU3bDVs" target="_blank" rel="noopener noreferrer" 
+                        class="social-icon-glow cold-glow" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-icon-glow cold-glow" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="#" class="social-icon-glow cold-glow" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://x.com/ColdkarMx" target="_blank" rel="noopener noreferrer" 
+                        class="social-icon-glow cold-glow" aria-label="X">
+                            <i class="fab fa-x-twitter"></i> 
                         </a>
                     </div>
                     <p class="text-slate-600 text-[10px] mt-4 uppercase tracking-widest">
