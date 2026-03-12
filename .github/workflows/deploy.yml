@@ -1,10 +1,8 @@
-name: Deploy Coldkar MX to HostGator
-
+name: Deploy Coldkar MX
 on:
   push:
     branches:
       - main
-
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -19,4 +17,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
+        server-dir: ./
+        # Esto obliga a subir solo lo básico
+        dangerous-clean-slate: false
