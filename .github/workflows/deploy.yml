@@ -19,5 +19,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        # HostGator normalmente usa la carpeta public_html
-        server-dir: public_html/
+        server-dir: public_html/  # <--- Asegúrate de que diga esto exactamente
