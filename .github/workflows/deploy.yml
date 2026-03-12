@@ -2,7 +2,7 @@ name: Deploy Coldkar MX
 on:
   push:
     branches:
-      - main
+      - main # Tu rama se llama principal, ¡esto es clave!
 
 jobs:
   web-deploy:
@@ -14,8 +14,10 @@ jobs:
 
     - name: 🚀 Sync files to HostGator
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with: # <--- ASEGÚRATE QUE DIGA 'with' (no 'con')
+      with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
+        protocol: ftp
+        port: 21
