@@ -3,7 +3,7 @@ let allProducts = [];
 // 1. Cargar los productos desde el JSON al iniciar
 async function loadProducts() {
     try {
-        const response = await fetch('data/products.json');
+        const response = await fetch('json/products.json');
         allProducts = await response.json();
         renderProductCards(allProducts);
     } catch (error) {
