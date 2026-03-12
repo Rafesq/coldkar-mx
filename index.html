@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coldkar de Mexico</title>
+    <title>ColdKar México | Refrigeradores Portátiles para Autos, Camping y Trailers</title>
+    <meta name="description" content="Venta de refrigeradores de alta gama para autos, camionetas, camping y trailers en México. Mantén tus alimentos frescos en cada ruta. ¡Envío gratis a todo el país!">
+    <meta name="keywords" content="refrigeradores para autos, refrigeradores 12v 24v, refrigeradores para camping, refrigeradores para trailers méxico, ColdKar México, enfriadores portátiles">
+    <meta property="og:title" content="ColdKar México - Refrigeración Portátil Premium">
+    <meta property="og:description" content="Soluciones de enfriamiento para vehículos, camping y trailers. Calidad y potencia en cada viaje.">
+    <meta property="og:image" content="https://tudominio.com/img/og-image.jpg">
+    <meta property="og:url" content="https://tudominio.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -301,6 +307,14 @@
                 <a href="#tecnologia" class="hover:text-blue-400 transition">Tecnología</a>
                 <a href="#soporte" class="hover:text-blue-400 transition">Soporte</a>
             </div>
+            <div class="relative inline-block cursor-pointer group ml-4" onclick="toggleCartDrawer()">
+            <i class="fas fa-shopping-cart text-white text-xl group-hover:text-blue-400 transition-colors"></i>
+
+            <span id="cart-count" 
+                class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full border-2 border-slate-900 hidden shadow-lg">
+                0
+            </span>
+            </div>
             <button onclick="toggleCart()"
                 class="bg-blue-600 text-white px-5 py-2 rounded-xl flex items-center shadow-lg shadow-blue-500/20">
                 <span id="cart-count" class="mr-2 bg-white/20 px-2 rounded-md">0</span>
@@ -522,9 +536,17 @@
             </div>
             <h4 class="text-xl font-bold text-white mb-3">Guía de Inicio Rápido</h4>
             <p class="text-slate-400 text-sm mb-6">Los 3 pasos esenciales para conectar tu equipo y optimizar el enfriamiento en tu primer viaje.</p>
-            <a href="#pasos-basicos" class="text-blue-400 text-sm font-bold uppercase tracking-wider hover:text-white transition inline-block">Ver pasos básicos →</a>
+            <button onclick="verPasos()" class="text-blue-400 text-sm font-bold uppercase tracking-wider hover:text-white transition inline-block">
+                Ver pasos básicos →
+            </button>
         </div>
-
+            <div id="pasos-basicos" class="hidden glass p-8 md:p-12 rounded-[2rem] border border-slate-800 mt-10 max-w-4xl mx-auto scroll-mt-24">
+        <div class="mt-10 pt-6 border-t border-slate-800 text-center">
+            <button onclick="document.getElementById('pasos-basicos').classList.add('hidden')" class="text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest transition">
+                ✕ Cerrar Guía
+            </button>
+        </div>
+    </div>
         <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-emerald-500/50 transition-colors group text-left">
             <div class="bg-emerald-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span class="text-2xl">🛠️</span>
@@ -914,6 +936,19 @@
         }
 
     </script>
+    <script>
+        function verPasos() {
+            const tarjeta = document.getElementById('pasos-basicos');
+            
+            // 1. Quitamos la clase 'hidden' para que se vea
+            tarjeta.classList.remove('hidden');
+            
+            // 2. Esperamos un milisegundo para que el navegador la reconozca y nos deslizamos
+            setTimeout(() => {
+                tarjeta.scrollIntoView({ behavior: 'smooth' });
+            }, 10);
+        }
+</script>
     <script src="js/main.js"></script>
 
 <a href="https://wa.me/525512580859?text=Hola%20Coldkar%20MX,%20me%20gustaría%20más%20información" 
@@ -1044,7 +1079,36 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Contacto -->
+                <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden transition-opacity duration-300"></div>
+
+            <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-[400px] bg-slate-900/95 border-l border-slate-800 z-[70] translate-x-full transition-transform duration-500 ease-in-out flex flex-col shadow-2xl">
+                
+                <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+                    <h3 class="text-xl font-black text-white uppercase tracking-tighter">Tu Pedido</h3>
+                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white transition">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
+                    </div>
+
+                <div class="p-6 border-t border-slate-800 bg-slate-900/50">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Total Estimado</span>
+                        <span id="cart-total" class="text-2xl font-black text-white">$0</span>
+                    </div>
+                    
+                    <button onclick="checkoutWhatsApp()" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-lg shadow-blue-900/40">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        FINALIZAR POR WHATSAPP
+                    </button>
+                    <p class="text-[10px] text-slate-500 text-center mt-4 uppercase tracking-tighter">
+                        * El envío se coordina con un asesor técnico
+                    </p>
+                </div>
+            </div>
+                            <!-- Col 3: Contacto -->
                 <div>
                     <h5 class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mb-5">Contacto</h5>
                     <ul class="space-y-3">
@@ -1085,7 +1149,7 @@
                         </a>
                     </div>
                     <p class="text-slate-600 text-[10px] mt-4 uppercase tracking-widest">
-                        Contenido · Tips · Instalaciones
+                        Contenido · Tips
                     </p>
                 </div>
 

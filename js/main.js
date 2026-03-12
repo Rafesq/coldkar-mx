@@ -1,5 +1,12 @@
 let allProducts = [];
 
+const formatter = new Intl.NumberFormat('es-MX', {
+    style: 'currency',
+    currency: 'MXN',
+    minimumFractionDigits: 0 // Si no quieres mostrar los centavos .00
+});
+
+
 // 1. Cargar los productos desde el JSON al iniciar
 async function loadProducts() {
     try {
@@ -51,7 +58,7 @@ function renderProductCards(products) {
 
                 <div class="flex justify-between items-center mt-auto">
                     <div>
-                        <span class="text-2xl font-black text-white">$${p.precio.toLocaleString()}</span>
+                        <span class="text-2xl font-black text-white">${formatter.format(p.precio)}</span>
                         <p class="text-[9px] text-emerald-400 font-bold uppercase tracking-tighter">
                             🚚 Envío gratis a toda la República
                         </p>
@@ -77,7 +84,7 @@ function openProductModal(productId) {
     // Llenar textos básicos
     document.getElementById('modal-title').innerText = product.nombre;
     document.getElementById('modal-category').innerText = product.categoria;
-    document.getElementById('modal-price').innerText = `$${product.precio.toLocaleString()}`;
+    document.getElementById('modal-price').innerText = formatter.format(product.precio);
     document.getElementById('modal-description').innerText = product.descripcion || '';
 
     // Llenar especificaciones técnicas (iconos)
@@ -179,6 +186,146 @@ function showToast(message) {
         toast.classList.add('translate-y-full', 'opacity-0');
     }, 2500);
 }
+
+// 1. Inicializar el carrito recuperando datos guardados o empezando vacío
+let cart = JSON.parse(localStorage.getItem('coldkar-cart')) || [];
+
+// 2. Función principal para añadir productos
+function addToCart(product) {
+    if (!product) return;
+
+    // Verificar si el producto ya está en el carrito
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+        // Si ya existe, solo aumentamos la cantidad
+        existingItem.quantity += 1;
+    } else {
+        // Si es nuevo, lo agregamos con cantidad 1
+        // (Copiamos el objeto para no afectar el catálogo original)
+        cart.push({
+            id: product.id,
+            nombre: product.nombre,
+            precio: product.precio,
+            imagen: product.imagenes[0],
+            quantity: 1
+        });
+    }
+
+    // Guardar cambios en el almacenamiento del navegador
+    saveCart();
+
+    // Mostrar feedback visual (usando tu función showToast)
+    showToast(`✅ ${product.nombre} añadido al carrito`);
+    
+    // Actualizar el contador del icono del carrito (si tienes uno)
+    updateCartUI();
+}
+
+// 3. Función para guardar en LocalStorage
+function saveCart() {
+    localStorage.setItem('coldkar-cart', JSON.stringify(cart));
+}
+
+// 4. Actualizar el contador visual en el Navbar
+function updateCartUI() {
+    const counter = document.getElementById('cart-count');
+    if (counter) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        counter.textContent = totalItems;
+        // Si el carrito está vacío, ocultamos el contador
+        counter.classList.toggle('hidden', totalItems === 0);
+    }
+}
+
+// Abrir y cerrar el carrito
+function toggleCartDrawer() {
+    const drawer = document.getElementById('cart-drawer');
+    const overlay = document.getElementById('cart-overlay');
+    
+    const isOpen = !drawer.classList.contains('translate-x-full');
+    
+    if (isOpen) {
+        drawer.classList.add('translate-x-full');
+        overlay.classList.add('hidden');
+        document.body.style.overflow = ''; // Habilitar scroll
+    } else {
+        drawer.classList.remove('translate-x-full');
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Bloquear scroll
+        renderCart(); // Actualizar la lista al abrir
+    }
+}
+
+// Dibujar los productos dentro del carrito
+function renderCart() {
+    const container = document.getElementById('cart-items-container');
+    const totalElement = document.getElementById('cart-total');
+    
+    if (cart.length === 0) {
+        container.innerHTML = `<div class="text-center py-20 text-slate-500 text-sm">Tu carrito está vacío ❄️</div>`;
+        totalElement.textContent = formatter.format(0);
+        return;
+    }
+
+    container.innerHTML = cart.map(item => `
+        <div class="flex gap-4 bg-slate-800/30 p-4 rounded-2xl border border-slate-800">
+            <img src="${item.imagen}" class="w-16 h-16 object-cover rounded-lg bg-slate-900">
+            <div class="flex-grow">
+                <h5 class="text-white font-bold text-sm">${item.nombre}</h5>
+                <p class="text-blue-400 font-black text-sm">${formatter.format(item.precio)}</p>
+                <div class="flex items-center gap-3 mt-2">
+                    <button onclick="updateQuantity('${item.id}', -1)" class="text-slate-500 hover:text-white"> <i class="fas fa-minus-circle"></i> </button>
+                    <span class="text-white text-xs font-bold">${item.quantity}</span>
+                    <button onclick="updateQuantity('${item.id}', 1)" class="text-slate-500 hover:text-white"> <i class="fas fa-plus-circle"></i> </button>
+                </div>
+            </div>
+            <button onclick="removeFromCart('${item.id}')" class="text-slate-600 hover:text-red-400 transition">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    `).join('');
+
+    const total = cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0);
+    totalElement.textContent = formatter.format(total);
+}
+
+// Funciones de apoyo
+function updateQuantity(id, change) {
+    const item = cart.find(i => i.id === id);
+    if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) return removeFromCart(id);
+        saveCart();
+        renderCart();
+        updateCartUI();
+    }
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(i => i.id !== id);
+    saveCart();
+    renderCart();
+    updateCartUI();
+}
+
+// El Gran Final: El mensaje de WhatsApp
+function checkoutWhatsApp() {
+    if (cart.length === 0) return;
+    
+    let message = "❄️ *NUEVO PEDIDO COLDKAR*%0A%0A";
+    cart.forEach(item => {
+        message += `• ${item.quantity}x ${item.nombre} (${formatter.format(item.precio)})%0A`;
+    });
+    
+    const total = cart.reduce((sum, item) => sum + (item.precio * item.quantity), 0);
+    message += `%0A*TOTAL:* ${formatter.format(total)}%0A%0A_¿Me pueden confirmar disponibilidad y costo de envío?_`;
+    
+    window.open(`https://wa.me/525512580859?text=${message}`, '_blank');
+}
+
+// Llamar a updateCartUI al cargar la página para mostrar lo que ya había
+document.addEventListener('DOMContentLoaded', updateCartUI);
 
 // Inicializar la carga
 loadProducts();
