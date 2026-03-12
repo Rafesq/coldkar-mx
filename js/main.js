@@ -188,7 +188,7 @@ function showToast(message) {
 }
 
 // 1. Inicializar el carrito recuperando datos guardados o empezando vacío
-let cart = JSON.parse(localStorage.getItem('coldkar-cart')) || [];
+var cart = JSON.parse(localStorage.getItem('coldkar-cart')) || [];
 
 // 2. Función principal para añadir productos
 function addToCart(product) {
