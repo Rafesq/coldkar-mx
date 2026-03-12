@@ -13,10 +13,9 @@ jobs:
 
     - name: 🚀 Sync files to HostGator
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
+    with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ./
-        # Esto obliga a subir solo lo básico
-        dangerous-clean-slate: false
+        # ESTA ES LA LÍNEA CLAVE:
+        server-dir: public_html/  
