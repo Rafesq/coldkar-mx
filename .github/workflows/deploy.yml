@@ -2,7 +2,7 @@ name: Deploy Coldkar MX
 on:
   push:
     branches:
-      - principal  # Veo en tu captura que tu rama se llama 'principal'
+      - main
 
 jobs:
   web-deploy:
