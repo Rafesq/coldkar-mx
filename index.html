@@ -1,1175 +1,306 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ColdKar México | Refrigeradores Portátiles para Autos, Camping y Trailers</title>
-    <meta name="description" content="Venta de refrigeradores de alta gama para autos, camionetas, camping y trailers en México. Mantén tus alimentos frescos en cada ruta. ¡Envío gratis a todo el país!">
-    <meta name="keywords" content="refrigeradores para autos, refrigeradores 12v 24v, refrigeradores para camping, refrigeradores para trailers méxico, ColdKar México, enfriadores portátiles">
-    <meta property="og:title" content="ColdKar México - Refrigeración Portátil Premium">
-    <meta property="og:description" content="Soluciones de enfriamiento para vehículos, camping y trailers. Calidad y potencia en cada viaje.">
-    <meta property="og:image" content="https://www.coldkarmx.com/img/og-image.jpg">
-    <meta property="og:url" content="https://www.coldkarmx.com">
+    <title>ColdKar México | Refrigeración Portátil Premium</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            safelist: [
-                'hover:border-blue-500/50', 'hover:border-emerald-500/50',
-                'bg-blue-500/10', 'bg-emerald-500/10',
-                'text-blue-400', 'text-emerald-400',
-                'bg-blue-600', 'bg-emerald-600',
-                'hover:text-blue-600', 'hover:text-emerald-600',
-                'shadow-blue-500/20', 'shadow-emerald-500/20',
-                'bg-white/30', 'hover:bg-white/60', 'scale-110'
-            ]
-        }
-    </script>
-    <link rel="icon" type="image/png" href="/src/img/favicon.png">
-    <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
-       html {
-            scroll-behavior: smooth;
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        
+        .hero-mesh { 
+            position: relative; isolation: isolate; overflow: hidden; 
+            background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.92)), url('src/img/fondo_deg.webp'); 
+            background-size: cover; background-position: center; 
         }
-       
-       body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #020617;
-            color: #f8fafc;
-        }
-
-        .glass {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-mesh {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            background-image:
-                linear-gradient(120deg, rgba(15, 23, 42, 0.88), rgba(2, 6, 23, 0.92)),
-                url('src/img/fondo_deg.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
         .hero-mesh::after {
-            content: '';
-            position: absolute;
-            inset: 0;
+            content: ''; position: absolute; inset: 0;
             background: conic-gradient(from 45deg, rgba(14, 165, 233, 0.25), rgba(30, 64, 175, 0.15), transparent 60%);
-            mix-blend-mode: screen;
-            animation: aurora 14s ease-in-out infinite alternate;
-            z-index: -1;
+            mix-blend-mode: screen; animation: aurora 14s ease-in-out infinite alternate; z-index: -1;
         }
-
-        @keyframes aurora {
-            0% {
-                transform: translate(-10%, -10%) scale(1);
-                filter: blur(40px);
-            }
-
-            100% {
-                transform: translate(10%, 10%) scale(1.2);
-                filter: blur(60px);
-            }
-        }
-
-        .badge-stack {
-            position: absolute;
-            right: 2rem;
-            bottom: 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            z-index: 1;
-        }
-
-        .badge-stack .badge {
-            border-radius: 1.25rem;
-            padding: 0.85rem 1.25rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            background: rgba(15, 23, 42, 0.75);
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .badge .dot {
-            width: 0.5rem;
-            height: 0.5rem;
-            border-radius: 999px;
-            background: linear-gradient(120deg, #38bdf8, #a855f7);
-        }
-
-        .chip {
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            border-radius: 999px;
-            padding: 0.35rem 0.9rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            background: rgba(15, 23, 42, 0.4);
-            transition: all 0.25s ease;
-        }
-
-        .chip.active {
-            background: #f8fafc;
-            color: #020617;
-            border-color: transparent;
-        }
+        @keyframes aurora { 0% { transform: translate(-10%, -10%) scale(1); filter: blur(40px); } 100% { transform: translate(10%, 10%) scale(1.2); filter: blur(60px); } }
 
         .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(10px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 200;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(12px);
+            display: none; align-items: center; justify-content: center;
+            z-index: 300; padding: 20px;
         }
+        .modal-overlay.active { display: flex; }
 
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .trust-card {
-            border-radius: 2rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            background: rgba(15, 23, 42, 0.65);
-            padding: 1.75rem;
-        }
-
-        .faq-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 1rem;
-            background: rgba(96, 165, 250, 0.15);
-            display: grid;
-            place-items: center;
-            font-size: 1.2rem;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #020617;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1e40af;
-            border-radius: 10px;
-        }
-
-        /* ── Logo entrance animations ── */
-        #coldkar-logo-wrapper .logo-text,
-        #coldkar-logo-wrapper .logo-slogan {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        @keyframes coldkarReveal {
-            0%   { opacity: 0; transform: translateX(-20px); visibility: visible; }
-            100% { opacity: 1; transform: translateX(0);     visibility: visible; }
-        }
-
-        @keyframes sloganReveal {
-            0%   { opacity: 0; transform: translateY(10px); visibility: visible; }
-            100% { opacity: 1; transform: translateY(0);    visibility: visible; }
-        }
-
-        #coldkar-logo-wrapper.start-animation .logo-text {
-            animation: coldkarReveal 1s ease-out forwards;
-        }
-
-        #coldkar-logo-wrapper.start-animation .logo-slogan {
-            animation: sloganReveal 0.8s ease-out 0.5s forwards;
-        }
-
-        /* ── Hero background logo reveal ── */
-        #hero-bg-logo {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 1;
-            filter: blur(0px);
-            transition: opacity 2s ease-out, filter 2s ease-out;
-            pointer-events: none;
-        }
-
-        #hero-bg-logo img {
-            width: clamp(280px, 50vw, 600px);
-            height: auto;
-            object-fit: contain;
-        }
-
-        #hero-bg-logo.hero-dimmed {
-            opacity: 0.15;
-            filter: blur(6px);
-        }
-
-        /* ── Hero message slide-up ── */
-        #hero-message {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(30px);
-            transition: opacity 1.2s ease-out, transform 1.2s ease-out, visibility 0s linear 0s;
-        }
-
-        #hero-message.hero-visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        /* ── Cold Glow button effect ── */
-        .cold-glow {
-            transition: box-shadow 0.4s ease, text-shadow 0.4s ease, transform 0.2s ease, background-color 0.3s ease;
-        }
-
-        .cold-glow:hover {
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.2);
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-        }
-
-        .cold-glow:active {
-            transform: scale(0.96);
-        }
-
-        /* ── Social icon glow ── */
-        .social-icon-glow {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 0.75rem;
-            background: rgba(30, 41, 59, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            color: #94a3b8;
-            transition: box-shadow 0.4s ease, color 0.3s ease, background 0.3s ease, transform 0.2s ease;
-        }
-
-        .social-icon-glow:hover {
-            color: #60a5fa;
-            background: rgba(59, 130, 246, 0.1);
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.15);
-            transform: translateY(-2px);
-        }
+        .chip { border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 999px; padding: 0.5rem 1.2rem; font-size: 0.75rem; text-transform: uppercase; background: rgba(15, 23, 42, 0.5); transition: all 0.2s ease; cursor: pointer; color: #94a3b8; }
+        .chip.active { background: #f8fafc; color: #020617; border-color: transparent; font-weight: 800; }
+        
+        .faq-icon { width: 44px; height: 44px; border-radius: 1rem; background: rgba(96, 165, 250, 0.1); display: grid; place-items: center; color: #60a5fa; }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                var wrapper = document.getElementById('coldkar-logo-wrapper');
-                if (wrapper) wrapper.classList.add('start-animation');
-            }, 100);
-
-            // Hero: logo bg dims + message appears after 1.5s
-            setTimeout(function() {
-                var bgLogo = document.getElementById('hero-bg-logo');
-                var heroMsg = document.getElementById('hero-message');
-                if (bgLogo) bgLogo.classList.add('hero-dimmed');
-                if (heroMsg) heroMsg.classList.add('hero-visible');
-            }, 1500);
-        });
-    </script>
 </head>
-
-<body class="overflow-x-hidden">
+<body>
 
     <nav class="fixed w-full z-[100] px-6 py-4">
         <div class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
-            <div id="coldkar-logo-wrapper" class="flex flex-col items-start leading-none">
-                <h1 class="logo-text text-xl font-extrabold tracking-tighter uppercase">
-                    COLD<span class="text-blue-500">KAR</span>-MEXICO
-                </h1>
-                <span class="logo-slogan text-[8px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-0.5 italic">
-                    Siempre Frío
-                </span>
+            <div class="flex flex-col items-start leading-none">
+                <h1 class="text-xl font-extrabold tracking-tighter uppercase">COLD<span class="text-blue-500">KAR</span>-MEXICO</h1>
+                <span class="text-[8px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-0.5 italic text-left">Siempre Frío</span>
             </div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#productos" class="hover:text-blue-400 transition">Productos</a>
+                <a href="#productos" class="hover:text-blue-400 transition">Catálogo</a>
                 <a href="#tecnologia" class="hover:text-blue-400 transition">Tecnología</a>
                 <a href="#soporte" class="hover:text-blue-400 transition">Soporte</a>
             </div>
-            <div class="relative inline-block cursor-pointer group ml-4" onclick="toggleCartDrawer()">
-            <i class="fas fa-shopping-cart text-white text-xl group-hover:text-blue-400 transition-colors"></i>
-
-            <span id="cart-count" 
-                class="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full border-2 border-slate-900 hidden shadow-lg">
-                0
-            </span>
-            </div>
-            <button onclick="toggleCart()"
-                class="bg-blue-600 text-white px-5 py-2 rounded-xl flex items-center shadow-lg shadow-blue-500/20">
-                <span id="cart-count" class="mr-2 bg-white/20 px-2 rounded-md">0</span>
-                🛒 Carrito
+            <button onclick="toggleCartDrawer()" class="bg-blue-600 text-white px-5 py-2 rounded-xl flex items-center shadow-lg hover:bg-blue-500 transition">
+                <span id="cart-count" class="mr-2 bg-white/20 px-2 rounded-md">0</span> 🛒 Carrito
             </button>
         </div>
     </nav>
 
-    <section class="hero-mesh min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
-
-        <div id="hero-bg-logo">
-            <img src="src/img/logo_plata.png" alt="ColdKar Logo">
-        </div>
-
-        <div id="hero-message" class="relative z-10">
-            <span
-                class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block italic">
-                Nueva Generación 2026
-            </span>
-            <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-                El frío que viaja <br><span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">contigo.</span>
-            </h2>
-            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mb-10 font-light leading-relaxed">
-                Diseño minimalista y enfriamiento de grado industrial para vehículos y SUVs.
-            </p>
+    <section class="hero-mesh min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <div data-aos="fade-up">
+            <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block italic">Nueva Generación 2026</span>
+            <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tight text-white leading-tight">El frío que viaja <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">contigo.</span></h2>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#productos"
-                    class="bg-white text-slate-950 px-10 py-4 rounded-2xl font-bold hover:bg-blue-400 transition-colors duration-300">
-                    Ver Catálogo
-                </a>
-                <button onclick="openVehicleModal()"
-                    class="glass px-10 py-4 rounded-2xl font-bold hover:border-blue-500/60 transition duration-300">
-                    Recomiéndame un modelo
-                </button>
-            </div>
-        </div>
-
-        <div class="badge-stack hidden lg:flex">
-            <div class="badge">
-                <span class="dot"></span>
-                -20°C en 18 minutos
-            </div>
-            <div class="badge">
-                <span class="dot"></span>
-                Protección inteligente de batería
-            </div>
-            <div class="badge">
-                <span class="dot"></span>
-                Compresores de Alto Rendimiento
+                <a href="#productos" class="bg-white text-slate-950 px-10 py-4 rounded-2xl font-bold hover:bg-blue-400 transition shadow-xl">Ver Catálogo</a>
+                <button onclick="openVehicleModal()" class="glass px-10 py-4 rounded-2xl font-bold hover:border-blue-500/60 transition">Recomiéndame un modelo</button>
             </div>
         </div>
     </section>
-
-    <div id="vehicle-modal" class="modal-overlay px-6">
-        <div class="glass max-w-lg w-full rounded-3xl p-8 relative">
-            <button class="absolute right-5 top-5 text-slate-400 hover:text-white"
-                onclick="closeVehicleModal()">✕</button>
-            <p class="text-xs uppercase tracking-[0.2em] text-blue-300 mb-3">Resuelve tus dudas</p>
-            <h3 class="text-3xl font-bold mb-2">¿Qué manejas?</h3>
-            <p class="text-slate-400 mb-6">Elige tu tipo de vehículo y te mostraremos la configuración ideal de voltaje
-                y capacidad.</p>
-            <div class="grid grid-cols-2 gap-3 mb-6" id="vehicle-buttons">
-                <button class="chip w-full text-center" onclick="selectVehicle('pickup', this)">Pickup</button>
-                <button class="chip w-full text-center" onclick="selectVehicle('suv', this)">SUV / Crossover</button>
-                <button class="chip w-full text-center" onclick="selectVehicle('van', this)">Van</button>
-                <button class="chip w-full text-center" onclick="selectVehicle('sedan', this)">Automóvil</button>
-            </div>
-            <div id="vehicle-tip"
-                class="rounded-2xl border border-slate-700 bg-slate-900/70 p-5 text-sm text-slate-300">
-                Selecciona una opción para ver la recomendación.
-            </div>
-            <div id="vehicle-actions" class="mt-6 flex flex-wrap gap-3 text-sm"></div>
-        </div>
-    </div>
 
     <section id="productos" class="max-w-7xl mx-auto py-24 px-6 text-center">
-        <div data-aos="fade-up" class="mb-16">
-            <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Catálogo Coldkar 2026</p>
-            <h3 class="text-3xl md:text-5xl font-black mb-4">Línea de Compresión Elite</h3>
-            <p class="text-slate-500 max-w-2xl mx-auto font-light">Tecnología Colku: Enfriamiento de -20°C para
-                cualquier terreno.</p>
+        <div class="mb-16" data-aos="fade-up">
+            <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Catálogo 2026</p>
+            <h3 class="text-3xl md:text-5xl font-black">Línea de Compresión Elite</h3>
         </div>
-
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        </div>
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
     </section>
 
-    <!-- ── Tecnología ── -->
-    <section id="tecnologia" class="max-w-7xl mx-auto py-24 px-6">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Ingeniería de Frío</p>
-            <h3 class="text-3xl md:text-5xl font-black mb-4">Tecnología que Resiste</h3>
-            <p class="text-slate-400 max-w-2xl mx-auto font-light">Cada componente está diseñado para condiciones extremas, desde el desierto de Sonora hasta las montañas de Durango.</p>
-        </div>
-
+    <section id="tecnologia" class="max-w-7xl mx-auto py-24 px-6 text-center">
+        <h3 class="text-3xl md:text-5xl font-black mb-16" data-aos="fade-up">Tecnología que Resiste</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Compresor -->
-            <div class="glass rounded-3xl p-8 border border-white/5 hover:border-blue-500/30 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="0">
-                <div class="w-14 h-14 rounded-2xl bg-blue-600/20 flex items-center justify-center mb-6 group-hover:bg-blue-600/40 transition-colors">
-                    <i class="fas fa-fan text-blue-400 text-2xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">Compresor de Alta Eficiencia</h4>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Motor brushless con tecnología de frecuencia variable. Alcanza -20°C en solo 18 minutos con un consumo inferior a 45W, optimizando cada watt de tu batería.</p>
-                <ul class="space-y-2 text-sm">
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        Refrigerante R134a ecológico
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        Vibración ultra-baja (≤35dB)
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                        Vida útil +50,000 horas
-                    </li>
+            <div class="glass rounded-3xl p-8 border border-white/5 text-left" data-aos="fade-up">
+                <div class="faq-icon mb-6"><i class="fas fa-fan text-2xl"></i></div>
+                <h4 class="text-xl font-bold mb-3 text-white">Compresor de Alta Eficiencia</h4>
+                <p class="text-slate-400 text-xs mb-4">Motor brushless con frecuencia variable. Alcanza -20°C en solo 18 minutos.</p>
+                <ul class="text-[10px] text-slate-300 space-y-2 uppercase font-black">
+                    <li><i class="fas fa-check text-blue-500 mr-2"></i> Refrigerante R134a ecológico</li>
+                    <li><i class="fas fa-check text-blue-500 mr-2"></i> Vibración ultra-baja (≤35dB)</li>
                 </ul>
             </div>
-
-            <!-- Protección de Batería -->
-            <div class="glass rounded-3xl p-8 border border-white/5 hover:border-emerald-500/30 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="150">
-                <div class="w-14 h-14 rounded-2xl bg-emerald-600/20 flex items-center justify-center mb-6 group-hover:bg-emerald-600/40 transition-colors">
-                    <i class="fas fa-shield-alt text-emerald-400 text-2xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">Protección de Batería 3 Niveles</h4>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Sistema inteligente que monitorea el voltaje en tiempo real. Se apaga automáticamente antes de comprometer el arranque de tu vehículo.</p>
-                <ul class="space-y-2 text-sm">
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        Nivel 1: Alerta a 12.0V
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        Nivel 2: Eco mode a 11.6V
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                        Nivel 3: Apagado a 11.0V
-                    </li>
+            <div class="glass rounded-3xl p-8 border border-white/5 text-left" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-icon mb-6"><i class="fas fa-shield-alt text-2xl"></i></div>
+                <h4 class="text-xl font-bold mb-3 text-white">Protección de Batería</h4>
+                <p class="text-slate-400 text-xs mb-4">Sistema inteligente de 3 niveles para proteger el arranque del vehículo.</p>
+                <ul class="text-[10px] text-slate-300 space-y-2 uppercase font-black">
+                    <li><i class="fas fa-check text-emerald-500 mr-2"></i> Niveles: 12.0V / 11.6V / 11.0V</li>
                 </ul>
             </div>
-
-            <!-- Aislamiento -->
-            <div class="glass rounded-3xl p-8 border border-white/5 hover:border-cyan-500/30 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="300">
-                <div class="w-14 h-14 rounded-2xl bg-cyan-600/20 flex items-center justify-center mb-6 group-hover:bg-cyan-600/40 transition-colors">
-                    <i class="fas fa-layer-group text-cyan-400 text-2xl"></i>
-                </div>
-                <h4 class="text-xl font-bold mb-3">Aislamiento Multicapa</h4>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">Espuma de poliuretano de alta densidad con barrera térmica de 75mm. Mantiene la temperatura interna hasta 12 horas sin energía.</p>
-                <ul class="space-y-2 text-sm">
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                        Densidad 42 kg/m³
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                        Sellado perimetral magnético
-                    </li>
-                    <li class="flex items-center gap-2 text-slate-300">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                        Resistente UV y humedad
-                    </li>
-                </ul>
+            <div class="glass rounded-3xl p-8 border border-white/5 text-left" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-icon mb-6"><i class="fas fa-layer-group text-2xl"></i></div>
+                <h4 class="text-xl font-bold mb-3 text-white">Aislamiento Multicapa</h4>
+                <p class="text-slate-400 text-xs mb-4">Espuma de poliuretano de alta densidad con barrera de 75mm.</p>
             </div>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto py-20 px-6" data-aos="fade-up">
-        <div class="glass rounded-[2.75rem] p-10 flex flex-col lg:flex-row gap-10 items-center">
-            <div class="flex-1">
-                <p class="text-xs uppercase tracking-[0.4em] text-emerald-300 mb-4">Confianza en ruta</p>
-                <h3 class="text-3xl font-bold mb-4">Adoptado por flotillas y aventureros</h3>
-                <p class="text-slate-400 mb-6">Más de 1,800 vehículos equipados en México con monitoreo activo de
-                    temperatura y soporte 24/7.</p>
-                <div class="flex gap-6 text-2xl font-black">
-                    <div>
-                        <span class="block text-emerald-300">98%</span>
-                        <span class="text-xs uppercase tracking-[0.2em] text-slate-400">Satisfacción</span>
-                    </div>
-                    <div>
-                        <span class="block text-blue-300">12h</span>
-                        <span class="text-xs uppercase tracking-[0.2em] text-slate-400">Autonomía eco</span>
-                    </div>
-                    <div>
-                        <span class="block text-cyan-300">-20°C</span>
-                        <span class="text-xs uppercase tracking-[0.2em] text-slate-400">Garantizado</span>
-                    </div>
+    <section class="max-w-7xl mx-auto py-20 px-6" data-aos="fade-up">
+        <div class="glass rounded-[3rem] p-10 flex flex-col lg:flex-row gap-12 items-center">
+            <div class="flex-1 text-left">
+                <p class="text-xs uppercase tracking-[0.4em] text-emerald-400 mb-4 font-black">Confianza en ruta</p>
+                <h3 class="text-4xl font-black mb-6">Adoptado por flotillas y aventureros</h3>
+                <div class="flex gap-10 mt-10">
+                    <div><span class="block text-4xl font-black text-emerald-400">98%</span><span class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Satisfacción</span></div>
+                    <div><span class="block text-4xl font-black text-blue-400">12h</span><span class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">Autonomía Eco</span></div>
                 </div>
             </div>
-            <div class="flex-1 grid sm:grid-cols-2 gap-4">
-                <div class="trust-card">
-                    <p class="text-sm text-slate-400 mb-4">“Instalamos la serie Colku DC-15F en 12 vans. Ahorro real de
-                        batería y soporte remoto en menos de 5 min.”</p>
-                    <p class="font-semibold">Adriana Leal</p>
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Operaciones · ChillBox Logistics</p>
-                </div>
-                <div class="trust-card border-dashed">
-                    <p class="text-sm text-slate-400 mb-4">“El modo dual es perfecto para viajes familiares. Mantenemos
-                        congelados y bebidas sin mezclar temperaturas.”</p>
-                    <p class="font-semibold">Carlos Téllez</p>
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Overlander · Nayarit</p>
-                </div>
+            <div class="flex-1 grid sm:grid-cols-2 gap-4 text-xs">
+                <div class="glass p-6 rounded-3xl border-white/5 italic text-slate-400">"Soporte remoto excelente calidad." - Adriana Leal</div>
+                <div class="glass p-6 rounded-3xl border-dashed border-white/20 italic text-slate-400">"El modo dual mantiene todo perfecto." - Carlos Téllez</div>
             </div>
         </div>
     </section>
 
-   <section id="soporte" class="max-w-5xl mx-auto py-24 px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
-        <p class="uppercase text-xs tracking-[0.4em] text-blue-400 mb-3 font-bold">Centro de Ayuda</p>
-        <h3 class="text-3xl md:text-5xl font-black mb-4">Soporte Coldkar</h3>
-        <p class="text-slate-400 max-w-2xl mx-auto font-light">Guías y respuestas a las preguntas más comunes.</p>
-    </div>
+    <section id="soporte" class="max-w-5xl mx-auto py-24 px-6 text-center">
+        <div class="mb-16">
+            <p class="uppercase text-[10px] tracking-[0.4em] text-blue-400 mb-4 font-black text-center">Centro de Ayuda</p>
+            <h3 class="text-4xl md:text-6xl font-black mb-4 text-white uppercase text-center">Soporte Coldkar</h3>
+        </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 max-w-4xl mx-auto">
-        <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-blue-500/50 transition-colors group text-left">
-            <div class="bg-blue-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span class="text-2xl">⚡</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20 text-left">
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5">
+                <h4 class="text-xl font-bold text-white mb-3">Guía de Inicio Rápido</h4>
+                <button onclick="verPasos()" class="text-blue-400 font-bold uppercase text-[10px]">Ver pasos →</button>
             </div>
-            <h4 class="text-xl font-bold text-white mb-3">Guía de Inicio Rápido</h4>
-            <p class="text-slate-400 text-sm mb-6">Los 3 pasos esenciales para conectar tu equipo y optimizar el enfriamiento en tu primer viaje.</p>
-            <button onclick="verPasos()" class="text-blue-400 text-sm font-bold uppercase tracking-wider hover:text-white transition inline-block">
-                Ver pasos básicos →
-            </button>
-        </div>
-            <div id="pasos-basicos" class="hidden glass p-8 md:p-12 rounded-[2rem] border border-slate-800 mt-10 max-w-4xl mx-auto scroll-mt-24">
-        <div class="mt-10 pt-6 border-t border-slate-800 text-center">
-            <button onclick="document.getElementById('pasos-basicos').classList.add('hidden')" class="text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest transition">
-                ✕ Cerrar Guía
-            </button>
-        </div>
-    </div>
-</div>
-</section>
-        <div class="glass p-8 rounded-[2rem] border border-slate-800 hover:border-emerald-500/50 transition-colors group text-left">
-            <div class="bg-emerald-900/30 w-12 h-12 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span class="text-2xl">🛠️</span>
-            </div>
-            <h4 class="text-xl font-bold text-white mb-3">Asistencia Técnica Premium</h4>
-            <p class="text-slate-400 text-sm mb-6">¿Necesitas ayuda con la configuración? Nuestro equipo técnico te asesora en tiempo real.</p>
-            <a href="https://wa.me/525512580859?text=Hola,%20necesito%20asistencia%20técnica%20con%20mi%20equipo" target="_blank" class="text-emerald-400 text-sm font-bold uppercase tracking-wider hover:text-white transition">Contactar por WhatsApp →</a>
-        </div>
-    </div>
-
-    <div id="pasos-basicos" class="glass p-8 md:p-12 rounded-[2rem] border border-slate-800 mt-10 max-w-4xl mx-auto scroll-mt-24" data-aos="fade-up">
-        <div class="flex items-center gap-4 mb-10">
-            <div class="bg-blue-500/20 p-3 rounded-2xl">
-                <span class="text-2xl">❄️</span>
-            </div>
-            <div>
-                <h4 class="text-2xl font-bold text-white">Ruta de Inicio Crítica</h4>
-                <p class="text-blue-400/60 text-xs uppercase tracking-widest font-bold">Configuración estándar Coldkar</p>
+            <div class="glass p-8 rounded-[2.5rem] border border-white/5">
+                <h4 class="text-xl font-bold text-white mb-3">Asistencia Técnica</h4>
+                <a href="https://wa.me/525512580859" target="_blank" class="text-emerald-400 font-bold uppercase text-[10px]">WhatsApp →</a>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="relative">
-                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">01</span>
-                <div class="relative z-10">
-                    <h5 class="text-white font-bold mb-2">Energía Estable</h5>
-                    <p class="text-slate-400 text-xs leading-relaxed">Conecta a la toma de 12V/24V. Asegúrate de que el conector entre hasta el fondo para evitar arcos eléctricos.</p>
-                </div>
-            </div>
-            <div class="relative">
-                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">02</span>
-                <div class="relative z-10">
-                    <h5 class="text-white font-bold mb-2">Flujo de Aire</h5>
-                    <p class="text-slate-400 text-xs leading-relaxed">Mantén despejadas las rejillas de ventilación (mínimo 10cm). El calor del compresor necesita salir libremente.</p>
-                </div>
-            </div>
-            <div class="relative">
-                <span class="text-blue-500/20 font-black text-6xl absolute -top-6 -left-2 italic">03</span>
-                <div class="relative z-10">
-                    <h5 class="text-white font-bold mb-2">Pre-Enfriado</h5>
-                    <p class="text-slate-400 text-xs leading-relaxed">Enciende el equipo a -18°C vacío por 30 min. Una vez frío, introduce tus alimentos para mantener la cadena de frío.</p>
-                </div>
+        <div id="pasos-basicos" class="hidden glass p-10 rounded-[3rem] mb-20 border-white/10">
+            <h4 class="text-xl font-black text-white mb-10 uppercase text-center">Ruta Crítica</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center uppercase text-[10px] font-black">
+                <div><span class="text-blue-500 text-3xl block mb-2">01</span> Energía 12V/24V</div>
+                <div><span class="text-blue-500 text-3xl block mb-2">02</span> Reposo 2 Horas</div>
+                <div><span class="text-blue-500 text-3xl block mb-2">03</span> Pre-Frío 30 Min</div>
             </div>
         </div>
-    </div>
-</section>
 
-        <!-- FAQ Accordion -->
         <div class="max-w-4xl mx-auto" data-aos="fade-up">
-            <h4 class="text-xl font-bold mb-8 text-center">Preguntas Frecuentes</h4>
+            <h4 class="text-2xl font-black mb-10 text-white text-center">Preguntas Frecuentes</h4>
             <div class="space-y-4">
-            <div class="glass rounded-3xl overflow-hidden border border-slate-800 transition-all duration-300" data-faq>
-                <button onclick="toggleFaq(1)" class="w-full flex items-center gap-4 p-6 text-left hover:bg-white/5">
-                    <div class="faq-icon">⚡</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-lg text-blue-100">¿Consume mucha batería de mi auto?</p>
-                        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">Descarga máxima 4.8A</p>
-                    </div>
-                    <span id="icon-1" class="text-blue-500 transition-transform duration-300">＋</span>
-                </button>
-                <div id="faq-1" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Nuestros refrigeradores cuentan con un sistema de protección de batería de 3 niveles. Se apagan
-                    automáticamente si detectan que el voltaje del auto es bajo, asegurando que siempre puedas encender
-                    tu motor.
+                <div class="glass rounded-[2rem] border border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full flex items-center gap-5 p-6 text-left">
+                        <div class="faq-icon text-lg">⚡</div>
+                        <div class="flex-1"><p class="font-bold text-white">¿Consume mucha batería de mi auto?</p><p class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mt-1">Descarga máxima 4.8A</p></div>
+                        <span id="icon-1" class="text-blue-500">＋</span>
+                    </button>
+                    <div id="faq-1" class="hidden px-8 pb-8 text-slate-400 text-sm border-t border-white/5 pt-4">Protección de 3 niveles incluida.</div>
+                </div>
+                <div class="glass rounded-[2rem] border border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full flex items-center gap-5 p-6 text-left">
+                        <div class="faq-icon text-lg">❄️</div>
+                        <div class="flex-1"><p class="font-bold text-white">¿Realmente congelan?</p><p class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mt-1">-20°C Certificados</p></div>
+                        <span id="icon-2" class="text-blue-500">＋</span>
+                    </button>
+                    <div id="faq-2" class="hidden px-8 pb-8 text-slate-400 text-sm border-t border-white/5 pt-4">Compresores industriales de alto rendimiento.</div>
+                </div>
+                <div class="glass rounded-[2rem] border border-white/5 overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full flex items-center gap-5 p-6 text-left">
+                        <div class="faq-icon text-lg">🔌</div>
+                        <div class="flex-1"><p class="font-bold text-white">¿Incluye cables para casa y auto?</p><p class="text-[9px] uppercase tracking-widest text-slate-500 font-bold mt-1">DC 12/24V + AC 110/220V</p></div>
+                        <span id="icon-3" class="text-blue-500">＋</span>
+                    </button>
+                    <div id="faq-3" class="hidden px-8 pb-8 text-slate-400 text-sm border-t border-white/5 pt-4">Sí, el kit de cables viene incluido.</div>
                 </div>
             </div>
-
-            <div class="glass rounded-3xl overflow-hidden border border-slate-800 transition-all duration-300" data-faq>
-                <button onclick="toggleFaq(2)" class="w-full flex items-center gap-4 p-6 text-left hover:bg-white/5">
-                    <div class="faq-icon">❄️</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-lg text-blue-100">¿Realmente congelan o solo mantienen frío?</p>
-                        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">-20°C certificados</p>
-                    </div>
-                    <span id="icon-2" class="text-blue-500 transition-transform duration-300">＋</span>
-                </button>
-                <div id="faq-2" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Utilizamos compresores de alta eficiencia que permiten alcanzar hasta los -20°C. Puedes llevar
-                    helados o carne congelada sin problemas, incluso en climas de desierto.
-                </div>
-            </div>
-
-            <div class="glass rounded-3xl overflow-hidden border border-slate-800 transition-all duration-300" data-faq>
-                <button onclick="toggleFaq(3)" class="w-full flex items-center gap-4 p-6 text-left hover:bg-white/5">
-                    <div class="faq-icon">🔌</div>
-                    <div class="flex-1">
-                        <p class="font-semibold text-lg text-blue-100">¿Incluye cables para casa y auto?</p>
-                        <p class="text-xs uppercase tracking-[0.2em] text-slate-500">DC 12/24V + AC 110/220V</p>
-                    </div>
-                    <span id="icon-3" class="text-blue-500 transition-transform duration-300">＋</span>
-                </button>
-                <div id="faq-3" class="hidden p-6 pt-0 text-slate-400 leading-relaxed border-t border-white/5">
-                    Sí, todos nuestros modelos Arctic Stealth incluyen el cable DC (12V/24V) para el encendedor del auto
-                    y un transformador AC (110V/220V) para conectarlo a cualquier enchufe de pared.
-                </div>
-            </div>
-        </div>
         </div>
     </section>
-
-    <div id="cart-sidebar"
-        class="fixed right-0 top-0 h-full w-full md:w-[400px] glass z-[150] translate-x-full transition-transform duration-500 p-8 flex flex-col">
-        <div class="flex justify-between items-center mb-10">
-            <h3 class="text-2xl font-bold">Tu Selección</h3>
-            <button onclick="toggleCart()" class="text-slate-400 hover:text-white">Cerrar ✕</button>
-        </div>
-        <div class="flex items-center gap-3 text-[10px] uppercase tracking-[0.3em] mb-8">
-            <span id="step-1"
-                class="px-3 py-1 rounded-full bg-blue-600/20 text-blue-200 border border-blue-500/40 transition-all duration-500">
-                1. Selección
-            </span>
-            <span id="step-2"
-                class="px-3 py-1 rounded-full border border-slate-700 text-slate-500 transition-all duration-500">
-                2. Datos
-            </span>
-            <span id="step-3"
-                class="px-3 py-1 rounded-full border border-slate-700 text-slate-500 transition-all duration-500">
-                3. Pago
-            </span>
-        </div>
-
-        <div id="cart-items" class="flex-grow space-y-6 overflow-y-auto pr-2">
-        </div>
-
-        <div class="mt-auto border-t border-slate-700 pt-8">
-            <div class="flex justify-between text-xl font-bold mb-6">
-                <span>Total estimado</span>
-                <span id="cart-total" class="text-blue-400">$0</span>
-            </div>
-            <div class="glass rounded-2xl p-4 mb-4 flex items-center gap-3 border border-blue-500/20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-400 flex-shrink-0 animate-pulse" style="animation-duration: 3s;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-                <div>
-                    <p class="text-white text-xs font-bold uppercase tracking-widest">Compra 100% Segura</p>
-                    <p class="text-slate-400 text-[10px] mt-0.5">Encriptación SSL de 256 bits</p>
-                </div>
-            </div>
-            <button onclick="iniciarProcesoPago()"
-                class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center py-5 rounded-2xl font-bold shadow-xl shadow-blue-600/20 transition-all transform active:scale-95 uppercase tracking-widest">
-                Finalizar Compra
-            </button>
-            <a href="https://wa.me/525512580859?text=Hola%20Coldkar%20MX,%20me%20gustaría%20cotizar%20un%20refrigerador" 
-            target="_blank" 
-            class="fixed bottom-8 right-8 z-[200] bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
-            </a>
-            <p class="text-center text-xs text-slate-500 mt-4 italic text-balance">
-                Serás redirigido a una plataforma de pago segura.
-            </p>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inicializar Animaciones
-        AOS.init({ once: true });
-
-
-        let cart = [];
-        const vehicleRecommendations = {
-            pickup: {
-                title: 'Pickups y 4x4',
-                recommendation: 'Colku DC-15F',
-                tip: 'Instálalo en reposabrazos o batea. Configuración 12V mantiene -18°C aun en marcha lenta.',
-                productId: 'product-colku',
-                productKey: 'colku',
-                variant: '12V'
-            },
-            suv: {
-                title: 'SUVs y crossovers',
-                recommendation: 'Glacier 28X',
-                tip: 'Zona dual para familia y provisiones. Mantén bebidas y congelados en un solo equipo.',
-                productId: 'product-glacier',
-                productKey: 'glacier',
-                variant: 'Dual 12/24V'
-            },
-            van: {
-                title: 'Vans y flotillas',
-                recommendation: 'FleetCore 42 Pro',
-                tip: 'Optimiza reparto nocturno con modo eco y monitoreo remoto incluido.',
-                productId: 'product-fleet',
-                productKey: 'fleet',
-                variant: '24V'
-            },
-            sedan: {
-                title: 'Sedanes compactos',
-                recommendation: 'Colku DC-15F',
-                tip: 'Formato slim cabe en la cajuela sin sacrificar espacio. Usa 110V en casa y 12V en ruta.',
-                productId: 'product-colku',
-                productKey: 'colku',
-                variant: '110V'
-            }
-        };
-        const vehicleModal = document.getElementById('vehicle-modal');
-        let currentVehicleSelection = null;
-
-        function toggleCart() {
-            document.getElementById('cart-sidebar').classList.toggle('translate-x-full');
-        }
-
-        function openVehicleModal() {
-            vehicleModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeVehicleModal() {
-            vehicleModal.classList.remove('active');
-            document.body.style.overflow = '';
-            currentVehicleSelection = null;
-            document.getElementById('vehicle-tip').innerText = 'Selecciona una opción para ver la recomendación.';
-            document.getElementById('vehicle-actions').innerHTML = '';
-            vehicleModal.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
-        }
-
-        function selectVehicle(type, element) {
-            const config = vehicleRecommendations[type];
-            if (!config) return;
-            currentVehicleSelection = type;
-            vehicleModal.querySelectorAll('#vehicle-buttons .chip').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-
-            const tip = document.getElementById('vehicle-tip');
-            tip.innerHTML = `
-                <p class="text-sm text-blue-200 mb-2">${config.title}</p>
-                <p class="text-xl font-semibold mb-1">${config.recommendation}</p>
-                <p class="text-slate-300 mb-3">${config.tip}</p>
-                <span class="text-xs uppercase tracking-[0.2em] text-emerald-300">Configura: ${config.variant}</span>
-            `;
-
-            const actions = document.getElementById('vehicle-actions');
-            actions.innerHTML = `
-                <button class="bg-white text-slate-900 px-6 py-3 rounded-2xl font-bold" onclick="goToProduct('${config.productId}','${config.productKey}','${config.variant}')">
-                    Ver ${config.recommendation}
-                </button>
-                <button class="chip" onclick="closeVehicleModal()">Listo</button>
-            `;
-        }
-
-        function goToProduct(productId, productKey, variantLabel) {
-            const card = document.getElementById(productId);
-            if (card) {
-                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                const chips = Array.from(card.querySelectorAll('.chip'));
-                const targetChip = chips.find(chip => chip.textContent.trim() === variantLabel);
-                if (targetChip) {
-                    selectVariant(productKey, variantLabel, targetChip);
-                }
-                card.style.boxShadow = '0 0 0 2px rgba(59,130,246,0.7)';
-                setTimeout(() => {
-                    card.style.boxShadow = '';
-                }, 1800);
-            } else {
-                document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
-            }
-            closeVehicleModal();
-        }
-
-        function selectVariant(productKey, option, element) {
-            const productCard = document.querySelector(`[data-product="${productKey}"]`);
-            if (!productCard) return;
-            productCard.querySelectorAll('.chip').forEach(chip => chip.classList.remove('active'));
-            element.classList.add('active');
-            const label = document.getElementById(`variant-${productKey}`);
-            if (label) {
-                label.innerText = `Compatibilidad ideal: ${option}`;
-            }
-        }
-
-        function addToCart(product) {
-            cart.push(product);
-            updateCart();
-            showToast('❄️ ' + product.nombre + ' agregado al carrito');
-            if (!document.getElementById('cart-sidebar').classList.contains('translate-x-0')) {
-                toggleCart();
-            }
-        }
-
-        function updateCart() {
-            const count = document.getElementById('cart-count');
-            const itemsDiv = document.getElementById('cart-items');
-            const totalSpan = document.getElementById('cart-total');
-
-            // Actualiza el contador circular del menú
-            count.innerText = cart.length;
-
-            if (cart.length === 0) {
-                itemsDiv.innerHTML = '<p class="text-slate-500 text-center py-10 italic">Tu carrito está vacío.</p>';
-            } else {
-                itemsDiv.innerHTML = cart.map((item, index) => `
-            <div class="flex justify-between items-center bg-slate-800/40 p-4 rounded-2xl border border-white/5 shadow-inner">
-                <div>
-                    <p class="font-bold text-sm uppercase tracking-tight">${item.nombre}</p>
-                    <p class="text-blue-400 text-xs font-black">$${item.precio.toLocaleString()}.00</p>
-                </div>
-                <button onclick="removeItem(${index})" class="text-red-400/60 text-[10px] uppercase font-bold hover:text-red-400 transition">
-                    Quitar
-                </button>
-            </div>
-        `).join('');
-            }
-
-            // Calculamos el total
-            const total = cart.reduce((acc, item) => acc + item.precio, 0);
-
-            // Inyectamos el total con el mensaje de Envío Gratis
-            if (total > 0) {
-                totalSpan.innerHTML = `
-            <div class="text-right">
-                <span class="block text-2xl font-black text-white">$${total.toLocaleString()}.00</span>
-                <span class="block text-[10px] text-emerald-400 font-bold uppercase tracking-[0.1em] mt-1">
-                    🚚 Envío gratis a toda la República
-                </span>
-            </div>
-        `;
-            } else {
-                totalSpan.innerText = "$0.00";
-            }
-        }
-        function removeItem(index) {
-            cart.splice(index, 1);
-            updateCart();
-        }
-
-        function toggleFaq(id) {
-            const content = document.getElementById(`faq-${id}`);
-            const icon = document.getElementById(`icon-${id}`);
-            document.querySelectorAll('[id^="faq-"]').forEach((panel, idx) => {
-                const panelIcon = document.getElementById(`icon-${idx + 1}`);
-                if (panel !== content) {
-                    panel.classList.add('hidden');
-                    if (panelIcon) {
-                        panelIcon.style.transform = 'rotate(0deg)';
-                        panelIcon.innerText = '＋';
-                    }
-                }
-            });
-
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.style.transform = 'rotate(45deg)';
-                icon.innerText = '✕';
-            } else {
-                content.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-                icon.innerText = '＋';
-            }
-        }
-
-        vehicleModal.addEventListener('click', (event) => {
-            if (event.target === event.currentTarget) {
-                closeVehicleModal();
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && vehicleModal.classList.contains('active')) {
-                closeVehicleModal();
-            }
-        });
-
-        updateCart();
-
-        function iniciarProcesoPago() {
-            if (cart.length === 0) return alert("Agrega un producto primero");
-
-            const s1 = document.getElementById('step-1');
-            const s2 = document.getElementById('step-2');
-            const s3 = document.getElementById('step-3');
-
-            // 1. Apagamos el paso 1 y encendemos el 2 (Simulando "Procesando Datos")
-            s1.classList.replace('text-blue-200', 'text-slate-500');
-            s1.classList.replace('border-blue-500/40', 'border-slate-700');
-
-            s2.classList.add('bg-blue-600/20', 'text-blue-200', 'border-blue-500/40', 'animate-pulse');
-            s2.classList.remove('text-slate-500', 'border-slate-700');
-
-            // 2. Esperamos un segundo y encendemos el 3 (Simulando "Conectando con Banco")
-            setTimeout(() => {
-                s2.classList.remove('animate-pulse');
-                s3.classList.add('bg-blue-600/20', 'text-blue-200', 'border-blue-500/40');
-                s3.classList.remove('text-slate-500', 'border-slate-700');
-
-                // 3. Finalmente redirigimos a Mercado Pago
-                window.open('https://link.mercadopago.com.mx/coldkarmx', '_blank');
-
-            }, 1200); // El tiempo de espera es de 1.2 segundos
-        }
-
-    </script>
-    <script>
-        function verPasos() {
-            const tarjeta = document.getElementById('pasos-basicos');
-            
-            // 1. Quitamos la clase 'hidden' para que se vea
-            tarjeta.classList.remove('hidden');
-            
-            // 2. Esperamos un milisegundo para que el navegador la reconozca y nos deslizamos
-            setTimeout(() => {
-                tarjeta.scrollIntoView({ behavior: 'smooth' });
-            }, 10);
-        }
-</script>
-
-<a href="https://wa.me/525512580859?text=Hola%20Coldkar%20MX,%20me%20gustaría%20más%20información" 
-   target="_blank" 
-   class="fixed bottom-4 right-4 z-[200] bg-[#25D366] p-2 md:p-1 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
-
-    <span class="absolute -top-1 -right-1 flex h-3 w-3 md:h-4 md:w-4 z-10">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3 w-3 md:h-4 md:w-4 bg-green-500"></span>
-    </span>
-
-    <div class="hidden md:flex bg-slate-900 border border-slate-800 p-3 rounded-2xl items-center gap-3 group-hover:bg-blue-600 transition-all duration-500">
-        <div class="bg-green-500 p-2 rounded-xl group-hover:scale-110 transition-transform">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
-            </svg>
-        </div>
-        <div class="pr-2 text-left">
-            <p class="text-[9px] uppercase font-bold text-slate-500 group-hover:text-blue-100 leading-none mb-1 tracking-tighter">Coordinar Envío</p>
-            <p class="text-xs font-bold text-white leading-none">Ventas Coldkar</p>
-        </div>
-    </div>
-
-    <div class="md:hidden">
-        <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.946 1.694 5.613l-.474 1.731 1.769-.464z" />
-        </svg>
-    </div>
-</a>
-
-    <div id="product-modal" class="fixed inset-0 z-[250] hidden flex items-center justify-center p-4">
-        <div onclick="closeModal()" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
-
-        <div
-            class="glass max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-[3rem] relative z-[260] flex flex-col md:flex-row shadow-2xl border border-white/10">
-            <button onclick="closeModal()"
-                class="absolute top-6 right-6 text-slate-400 hover:text-white z-10 text-2xl">✕</button>
-
-            <div class="md:w-1/2 p-8">
-                <div class="rounded-[2rem] overflow-hidden bg-slate-800 h-80 mb-4 text-center">
-                    <img id="modal-main-img" src="" class="w-full h-full object-cover">
-                </div>
-                <div id="modal-thumbnails" class="flex gap-2 overflow-x-auto pb-2">
-                </div>
-            </div>
-
-<div class="md:w-1/2 p-8 flex flex-col justify-center">
-                <h2 id="modal-title" class="text-3xl font-bold text-white mb-2">Nombre del Modelo</h2>
-                <p id="modal-category" class="text-blue-400 font-medium mb-4 uppercase tracking-widest text-sm">Categoría</p>
-                
-                <div class="flex items-center mb-6">
-                    <span id="modal-price" class="text-4xl font-extrabold text-white">$0.00</span>
-                    <span class="ml-2 text-slate-400 text-sm">MXN</span>
-                </div>
-
-                <p id="modal-description" class="text-slate-300 mb-8 leading-relaxed">
-                    Descripción detallada del producto cargada desde el JSON.
-                </p>
-
-                <div class="grid grid-cols-2 gap-4 mb-8 p-4 bg-white/5 rounded-3xl border border-white/10">
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-thermometer-half text-blue-400 text-xl w-6"></i>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Rango</span>
-                            <strong id="modal-rango" class="text-sm text-slate-200">--</strong>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-bolt text-blue-400 text-xl w-6"></i>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Voltaje</span>
-                            <strong id="modal-voltaje" class="text-sm text-slate-200">--</strong>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-box-open text-blue-400 text-xl w-6"></i>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Capacidad</span>
-                            <strong id="modal-capacidad" class="text-sm text-slate-200">--</strong>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-ruler-combined text-blue-400 text-xl w-6"></i>
-                        <div class="flex flex-col">
-                            <span class="text-[10px] uppercase text-slate-500 font-bold">Medidas</span>
-                            <strong id="modal-dimensiones" class="text-sm text-slate-200">--</strong>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <button id="modal-add-btn" class="cold-glow w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-900/20">
-                        Añadir al Carrito
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="toast-notification" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[300] bg-blue-600/90 backdrop-blur-md text-white px-6 py-3 rounded-2xl font-bold text-sm shadow-lg shadow-blue-900/40 translate-y-full opacity-0 transition-all duration-500 pointer-events-none">
-    </div>
-    <script src="js/main.js"></script>
 
     <footer class="border-t border-white/5 bg-slate-950/80 mt-20">
         <div class="max-w-7xl mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-
-                <!-- Col 1: Logo & Slogan -->
-                <div class="flex flex-col">
-                    <h4 class="text-2xl font-black tracking-tighter uppercase leading-none">
-                        COLD<span class="text-blue-500">KAR</span>-MEXICO
-                    </h4>
-                    <span class="text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-1.5 italic">
-                        Siempre Frío
-                    </span>
-                    <p class="text-slate-500 text-xs mt-4 leading-relaxed">
-                        Refrigeración vehicular de grado industrial. Diseñados para el overlanding extremo en México.
-                    </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-left">
+                <div>
+                    <h4 class="text-2xl font-black uppercase text-white leading-none">COLD<span class="text-blue-500">KAR</span>-MEXICO</h4>
+                    <span class="text-[9px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-1.5 italic">Siempre Frío</span>
+                    <p class="text-slate-500 text-xs mt-4 leading-relaxed">Refrigeración vehicular de grado industrial. Diseñados para México.</p>
                 </div>
-
-                <!-- Col 2: Navegación -->
                 <div>
                     <h5 class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mb-5">Navegación</h5>
-                    <ul class="space-y-3">
-                        <li><a href="#productos" class="text-sm text-slate-500 hover:text-blue-400 transition-colors">Catálogo</a></li>
-                        <li><a href="#tecnologia" class="text-sm text-slate-500 hover:text-blue-400 transition-colors">Tecnología</a></li>
-                        <li><a href="#soporte" class="text-sm text-slate-500 hover:text-blue-400 transition-colors">Soporte</a></li>
-                        <li><a href="#" onclick="alert('Aquí irá tu Aviso de Privacidad.')" class="text-sm text-slate-500 hover:text-blue-400 transition-colors">Aviso de Privacidad</a></li>
-                        <li><a href="#" onclick="alert('Aquí irán tus Términos y Condiciones.')" class="text-sm text-slate-500 hover:text-blue-400 transition-colors">Términos y Condiciones</a></li>
+                    <ul class="space-y-3 text-sm text-slate-500 font-medium">
+                        <li><a href="#productos" class="hover:text-blue-400">Catálogo</a></li>
+                        <li><a href="#tecnologia" class="hover:text-blue-400">Tecnología</a></li>
+                        <li><a href="#soporte" class="hover:text-blue-400">Soporte</a></li>
+                        <li><a href="#">Aviso de Privacidad</a></li>
                     </ul>
                 </div>
-
-                <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden transition-opacity duration-300"></div>
-
-            <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-[400px] bg-slate-900/95 border-l border-slate-800 z-[70] translate-x-full transition-transform duration-500 ease-in-out flex flex-col shadow-2xl">
-                
-                <div class="p-6 border-b border-slate-800 flex items-center justify-between">
-                    <h3 class="text-xl font-black text-white uppercase tracking-tighter">Tu Pedido</h3>
-                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white transition">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-
-                <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
-                    </div>
-
-                <div class="p-6 border-t border-slate-800 bg-slate-900/50">
-                    <div class="flex justify-between items-center mb-6">
-                        <span class="text-slate-400 font-bold uppercase text-xs tracking-widest">Total Estimado</span>
-                        <span id="cart-total" class="text-2xl font-black text-white">$0</span>
-                    </div>
-                    
-                    <button onclick="checkoutWhatsApp()" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 transition-all shadow-lg shadow-blue-900/40">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                        FINALIZAR POR WHATSAPP
-                    </button>
-                    <p class="text-[10px] text-slate-500 text-center mt-4 uppercase tracking-tighter">
-                        * El envío se coordina con un asesor técnico
-                    </p>
-                </div>
-            </div>
-                            <!-- Col 3: Contacto -->
                 <div>
                     <h5 class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mb-5">Contacto</h5>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://wa.me/5215512580859" target="_blank" class="flex items-center gap-3 text-sm text-slate-500 hover:text-emerald-400 transition-colors">
-                                <i class="fab fa-whatsapp text-lg"></i>
-                                +52 55 1258 0859
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mailto:contacto@koldcarmx.com" class="flex items-center gap-3 text-sm text-slate-500 hover:text-blue-400 transition-colors">
-                                <i class="fas fa-envelope text-base"></i>
-                                contacto@koldcarmx.com
-                            </a>
-                        </li>
-                        <li class="flex items-center gap-3 text-sm text-slate-500">
-                            <i class="fas fa-map-marker-alt text-base"></i>
-                            Ciudad de México, MX
-                        </li>
+                    <ul class="space-y-3 text-sm text-slate-500">
+                        <li class="flex items-center gap-3"><i class="fab fa-whatsapp"></i> +52 55 1258 0859</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-envelope"></i> contacto@koldcarmx.com</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt"></i> Ciudad de México, MX</li>
                     </ul>
                 </div>
-
-                <!-- Col 4: Redes Sociales -->
                 <div>
                     <h5 class="text-[10px] uppercase tracking-[0.3em] text-slate-400 font-bold mb-5">Síguenos</h5>
                     <div class="flex gap-3">
-                        <a href="https://www.facebook.com/share/1Ar2QZXDRX/" target="_blank" rel="noopener noreferrer" 
-                        class="social-icon-glow cold-glow" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/coldkarmx?igsh=ZjQwOHh0bnU3bDVs" target="_blank" rel="noopener noreferrer" 
-                        class="social-icon-glow cold-glow" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://x.com/ColdkarMx" target="_blank" rel="noopener noreferrer" 
-                        class="social-icon-glow cold-glow" aria-label="X">
-                            <i class="fab fa-x-twitter"></i> 
-                        </a>
+                        <a href="https://www.facebook.com/share/1Ar2QZXDRX/" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center border border-white/5 hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-white"></i></a>
+                        <a href="https://www.instagram.com/coldkarmx?igsh=ZjQwOHh0bnU3bDVs" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center border border-white/5 hover:bg-pink-600 transition"><i class="fab fa-instagram text-white"></i></a>
+                        <a href="https://x.com/ColdkarMx" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center border border-white/5 hover:bg-slate-700 transition"><i class="fab fa-x-twitter text-white"></i></a>
                     </div>
-                    <p class="text-slate-600 text-[10px] mt-4 uppercase tracking-widest">
-                        Contenido · Tips
-                    </p>
+                    <p class="text-slate-600 text-[9px] mt-4 uppercase tracking-widest font-black italic">Contenido · Tips</p>
                 </div>
-
             </div>
         </div>
-
-        <!-- Copyright bar -->
-        <div class="border-t border-white/5 py-6">
-            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-[10px] text-slate-600 uppercase tracking-widest">
-                    Coldkar de México © 2026 · Todos los derechos reservados
-                </p>
-                <p class="text-[10px] text-slate-700 italic">
-                    Equipamiento para Overlanding & Off-Road
-                </p>
-            </div>
+        <div class="border-t border-white/5 py-6 text-center">
+            <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">Coldkar de México © 2026 · Todos los derechos reservados</p>
         </div>
     </footer>
-    
+
+    <div id="cart-overlay" onclick="toggleCartDrawer()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[150] hidden"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full md:w-[420px] bg-[#0f172a] z-[200] translate-x-full transition-transform duration-500 flex flex-col border-l border-white/5 shadow-2xl">
+        <div class="p-8 flex justify-between items-center border-b border-white/5">
+            <h3 class="text-2xl font-black text-white uppercase tracking-tighter">Tu Selección</h3>
+            <button onclick="toggleCartDrawer()">✕</button>
+        </div>
+        <div class="px-8 mt-8 flex gap-2">
+            <div id="step-1" class="flex-1 text-[8px] font-black p-2 rounded-xl border border-blue-500/40 bg-blue-600/20 text-blue-200 text-center uppercase">1. Selección</div>
+            <div id="step-2" class="flex-1 text-[8px] font-black p-2 rounded-xl border border-white/10 text-slate-500 text-center uppercase">2. Datos</div>
+            <div id="step-3" class="flex-1 text-[8px] font-black p-2 rounded-xl border border-white/10 text-slate-500 text-center uppercase">3. Pago</div>
+        </div>
+        <div id="cart-items-container" class="flex-grow overflow-y-auto px-8 py-8 space-y-4 text-left"></div>
+        <div class="p-8 border-t border-white/10 bg-[#0f172a]">
+            <div class="flex justify-between items-end mb-8">
+                <span class="text-xl font-bold text-white font-light">Total estimado</span>
+                <span id="cart-total" class="text-2xl font-black text-blue-400">$0.00</span>
+            </div>
+            <div class="mb-6 p-4 rounded-3xl border border-white/5 bg-white/5 flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl border border-blue-500/20 flex items-center justify-center text-blue-400 bg-blue-500/5"><i class="fas fa-shield-alt text-xl"></i></div>
+                <div class="text-left leading-none">
+                    <p class="text-[9px] font-black text-white uppercase tracking-widest mb-1">Compra 100% Segura</p>
+                    <p class="text-[8px] text-slate-500 uppercase font-bold">Encriptación SSL de 256 bits</p>
+                </div>
+            </div>
+            <button onclick="window.open('https://link.mercadopago.com.mx/coldkarmx', '_blank')" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs shadow-lg shadow-blue-900/40">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal-overlay">
+        <div class="glass max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-[3.5rem] relative flex flex-col md:flex-row p-8 border border-white/10">
+            <button onclick="closeModal()" class="absolute top-6 right-8 text-slate-400 text-2xl hover:text-white">✕</button>
+            <div class="md:w-1/2">
+                <div class="rounded-[2.5rem] overflow-hidden bg-slate-800 h-80 mb-4"><img id="modal-main-img" class="w-full h-full object-cover"></div>
+                <div id="modal-thumbnails" class="flex gap-3 overflow-x-auto pb-2"></div>
+            </div>
+            <div class="md:w-1/2 md:pl-10 flex flex-col justify-center text-left">
+                <h2 id="modal-title" class="text-3xl font-black mb-2 uppercase text-white tracking-tight"></h2>
+                <p id="modal-price" class="text-3xl text-blue-400 font-black mb-6"></p>
+                <p id="modal-description" class="text-slate-400 text-sm mb-8 leading-relaxed font-light"></p>
+                <div class="grid grid-cols-2 gap-4 mb-8 p-6 bg-white/5 rounded-3xl text-[9px] uppercase font-bold text-slate-500">
+                    <div>Rango:<p id="modal-rango" class="text-slate-100 text-xs mt-1"></p></div>
+                    <div>Voltaje:<p id="modal-voltaje" class="text-slate-100 text-xs mt-1"></p></div>
+                    <div>Capacidad:<p id="modal-capacidad" class="text-slate-100 text-xs mt-1"></p></div>
+                    <div>Medidas:<p id="modal-dimensiones" class="text-slate-100 text-xs mt-1"></p></div>
+                </div>
+                <button id="modal-add-btn" class="bg-blue-600 text-white py-4 rounded-2xl font-black uppercase text-xs tracking-widest shadow-lg shadow-blue-900/40">Añadir al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="vehicle-modal" class="modal-overlay">
+        <div class="glass max-w-lg w-full rounded-[3rem] p-10 relative border border-white/10 text-center">
+            <button class="absolute right-6 top-6 text-slate-400 text-xl" onclick="closeVehicleModal()">✕</button>
+            <h3 class="text-3xl font-black mb-4 text-white uppercase tracking-tighter">¿Qué manejas?</h3>
+            <div class="grid grid-cols-2 gap-3 mb-8" id="vehicle-buttons">
+                <button class="chip" onclick="selectVehicle('pickup', this)">Pickup / 4x4</button>
+                <button class="chip" onclick="selectVehicle('suv', this)">SUV / Crossover</button>
+                <button class="chip" onclick="selectVehicle('van', this)">Van</button>
+                <button class="chip" onclick="selectVehicle('sedan', this)">Automóvil</button>
+            </div>
+            <div id="vehicle-tip" class="rounded-2xl border border-slate-700 bg-slate-900/70 p-6 text-sm text-slate-300 italic">Elige una opción para ver detalles técnicos.</div>
+            <div id="vehicle-actions" class="mt-8"></div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/525512580859" target="_blank" class="fixed bottom-6 left-6 z-[100] flex items-center gap-3 bg-[#1e293b] border border-white/10 p-2 pr-5 rounded-full shadow-2xl hover:bg-[#25D366] group transition-all duration-500">
+        <div class="bg-[#25D366] w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+            <i class="fab fa-whatsapp text-white group-hover:text-[#25D366] text-xl"></i>
+        </div>
+        <div class="flex flex-col text-left leading-none">
+            <span class="text-[8px] uppercase tracking-widest text-slate-500 group-hover:text-white font-bold mb-1">Coordinar Envío</span>
+            <span class="text-xs font-bold text-white">Ventas Coldkar</span>
+        </div>
+    </a>
+
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-[300] bg-blue-600 text-white px-6 py-3 rounded-2xl font-bold text-xs translate-y-full opacity-0 transition-all duration-500"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true });</script>
+    <script src="js/main.js?v=launch-2026"></script>
 </body>
 </html>
