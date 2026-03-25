@@ -49,10 +49,15 @@
                 <h1 class="text-xl font-extrabold tracking-tighter uppercase">COLD<span class="text-blue-500">KAR</span>-MEXICO</h1>
                 <span class="text-[8px] uppercase tracking-[0.3em] text-slate-500 font-bold mt-0.5 italic text-left">Siempre Frío</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
                 <a href="#productos" class="hover:text-blue-400 transition">Catálogo</a>
                 <a href="#tecnologia" class="hover:text-blue-400 transition">Tecnología</a>
                 <a href="#soporte" class="hover:text-blue-400 transition">Soporte</a>
+                <div class="flex items-center gap-2 border-l border-white/20 pl-6">
+                    <a href="https://www.facebook.com/share/1Ar2QZXDRX/" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800/50 flex items-center justify-center border border-white/10 hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-white text-xs"></i></a>
+                    <a href="https://www.instagram.com/coldkarmx?igsh=ZjQwOHh0bnU3bDVs" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800/50 flex items-center justify-center border border-white/10 hover:bg-pink-600 transition"><i class="fab fa-instagram text-white text-xs"></i></a>
+                    <a href="https://x.com/ColdkarMx" target="_blank" class="w-8 h-8 rounded-lg bg-slate-800/50 flex items-center justify-center border border-white/10 hover:bg-slate-700 transition"><i class="fab fa-x-twitter text-white text-xs"></i></a>
+                </div>
             </div>
             <button onclick="toggleCartDrawer()" class="bg-blue-600 text-white px-5 py-2 rounded-xl flex items-center shadow-lg hover:bg-blue-500 transition">
                 <span id="cart-count" class="mr-2 bg-white/20 px-2 rounded-md">0</span> 🛒 Carrito
@@ -287,7 +292,7 @@
         </div>
     </div>
 
-    <a href="https://wa.me/525512580859" target="_blank" class="fixed bottom-6 left-6 z-[100] flex items-center gap-3 bg-[#1e293b] border border-white/10 p-2 pr-5 rounded-full shadow-2xl hover:bg-[#25D366] group transition-all duration-500">
+    <a href="https://wa.me/525512580859" target="_blank" class="fixed bottom-6 left-6 z-[100] flex items-center gap-3 bg-[#1e293b] border border-white/10 p-2 pr-5 rounded-full shadow-2xl hover:bg-[#25D366] group transition-all duration-500 md:flex hidden">
         <div class="bg-[#25D366] w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
             <i class="fab fa-whatsapp text-white group-hover:text-[#25D366] text-xl"></i>
         </div>
@@ -296,6 +301,23 @@
             <span class="text-xs font-bold text-white">Ventas Coldkar</span>
         </div>
     </a>
+
+    <!-- WhatsApp móvil (versión compacta) -->
+    <a href="https://wa.me/525512580859" target="_blank" class="fixed bottom-6 left-6 z-[100] md:hidden">
+        <div class="bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl">
+            <i class="fab fa-whatsapp text-white text-2xl"></i>
+        </div>
+    </a>
+
+    <div class="fixed bottom-6 right-6 z-[90] bg-gradient-to-r from-blue-600 to-blue-700 text-white px-3 py-2 rounded-xl shadow-xl border border-white/10 max-w-[200px] md:max-w-xs md:px-4 md:py-3">
+        <div class="flex items-center gap-2">
+            <i class="fas fa-credit-card text-yellow-300 text-sm md:text-base"></i>
+            <div class="text-left">
+                <p class="text-[10px] md:text-xs font-bold">Aprovecha:</p>
+                <p class="text-[9px] md:text-xs">3 meses sin intereses con Banamex</p>
+            </div>
+        </div>
+    </div>
 
     <div id="toast-notification" class="fixed bottom-6 right-6 z-[300] bg-blue-600 text-white px-6 py-3 rounded-2xl font-bold text-xs translate-y-full opacity-0 transition-all duration-500"></div>
 

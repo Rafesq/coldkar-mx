@@ -34,6 +34,7 @@ function renderProductCards(products) {
                     <div>
                         <span class="text-2xl font-black text-white">${formatter.format(p.precio)}</span>
                         <p class="text-[9px] text-emerald-400 font-bold uppercase mt-1 tracking-tighter">🚚 Envío Gratis</p>
+                        <p class="text-[8px] text-blue-300 font-bold uppercase tracking-tighter">💳 3 msi Banamex</p>
                     </div>
                     <button onclick="addToCartByP('${p.id}')" class="bg-${accent}-600 text-white p-4 rounded-2xl font-bold transition-all active:scale-90 shadow-lg shadow-${accent}-500/20">🛒 +</button>
                 </div>
