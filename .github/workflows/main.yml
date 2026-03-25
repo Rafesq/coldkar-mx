@@ -1,0 +1,20 @@
+name: Despliegue Automático a HostGator
+on:
+  push:
+    branches:
+      - main  # Asegúrate de que este sea el nombre de tu rama principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Obtener código del repo
+        uses: actions/checkout@v4
+
+      - name: 🚀 Subir archivos a HostGator por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./public_html/  # Carpeta donde HostGator guarda tu web
